@@ -1,0 +1,215 @@
+#VRML V2.0 utf8
+#DEF L1 SpotLight {
+ #   location 0 2.8 -.5
+#	intensity 1
+ #	color 1 1 1
+  #  beamWidth 0.017
+   # cutOffAngle 1.02
+#}
+#tuong 
+Sound {
+	location 0 0 0
+	source DEF ac AudioClip { 
+		loop FALSE 
+		pitch 1.0 
+		url "sound/ah.wav" 
+	} 
+}
+DEF vacham Collision {
+	collide	TRUE
+	children [
+Transform {
+	translation	.05 0 0
+	children Shape {
+		appearance Appearance {
+			material Material {
+				
+			}
+		}
+
+		geometry Box {
+			size 3.1 2.5 0.1
+		}
+	}
+}
+
+
+#do tho
+
+Transform {
+	translation	0 -.78 0.5
+	children Inline	{
+		url	"item_boBanThoCung.wrl"
+	}
+}
+
+#chan Ngan cach
+
+Transform {
+	translation	1.55 0 0.7
+	children[ 
+		DEF ngangCanh Transform {
+			#translation	1.55 0 0.7
+			children [
+				Transform {
+					translation	0 0 0
+					children DEF cot Shape {
+						appearance DEF chatgo Appearance {
+							material Material {
+								#diffuseColor 1 1 0
+							}
+							texture	ImageTexture {
+							#	url	"image/bg_Go2.jpg"
+							}
+						}
+
+						geometry Box {
+							size 0.1 2.5 0.1
+						}
+					}
+				}
+
+				Transform {
+					translation	 0 0 0.2
+					children USE cot
+				}
+
+				Transform {
+					translation	0 0 -0.2
+					children USE cot
+				}
+
+				Transform {
+					translation	0 0 0.4
+					children USE cot
+				}
+
+				Transform {
+					translation	0 0 -.4
+					children USE cot
+				}
+
+				Transform {
+					translation	0 0 -.6
+					children USE cot
+				}
+
+				Transform {
+					translation	0 0 .6
+					children USE cot
+				}
+
+				Transform {
+					translation	0 0 .8
+					children USE cot
+				}
+
+				Transform {
+					translation	0 0 1
+					children USE cot
+				}
+
+				Transform {
+					translation	0 0 1.2
+					children USE cot
+				}
+
+				#ngang
+
+				DEF hoaTietNgang Transform {
+					translation	0 0 0.3
+					children [
+						Transform {
+							translation	0 -1 0
+							children DEF ngang Shape {
+								appearance USE chatgo
+								geometry Box {
+									size 0.1 0.1 1.9
+								}
+							}
+						}
+
+						Transform {
+							translation	0 -.8 0
+							scale 1 1 0.8
+							children USE ngang
+						}
+
+						Transform {
+							translation	0 -.6 0
+							scale 1 1 .6
+							children USE ngang
+						}
+
+						Transform {
+							translation	0 -.4 0
+							scale 1 1 .4
+							children USE ngang
+						}
+
+						Transform {
+							translation	0 -.2 0
+							scale 1 1 .2
+							children USE ngang
+						}
+
+						Transform {
+							translation	0 -.1 0
+							scale 1 1 .1
+							children USE ngang
+						}
+
+
+						#am
+
+						Transform {
+							translation	0 1 0
+							children USE ngang
+						}
+
+						Transform {
+							translation	0 .8 0
+							scale 1 1 0.8
+							children USE ngang
+						}
+
+						Transform {
+							translation	0 .6 0
+							scale 1 1 .6
+							children USE ngang
+						}
+
+						Transform {
+							translation	0 .4 0
+							scale 1 1 .4
+							children USE ngang
+						}
+
+						Transform {
+							translation	0 .2 0
+							scale 1 1 .2
+							children USE ngang
+						}
+
+						Transform {
+							translation	0 .1 0
+							scale 1 1 .1
+							children USE ngang
+						}
+
+					]
+				}
+
+		
+			]
+		}
+
+		
+
+	]
+
+}
+
+]}
+
+ROUTE vacham.collideTime TO	ac.startTime

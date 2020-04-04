@@ -1,0 +1,57 @@
+#VRML V2.0 utf8
+
+#tru noi
+DEF	p2 Transform	{
+	rotation 1 0 0 1.57
+	children Shape {
+		appearance DEF mau Appearance {
+			material Material {
+				diffuseColor .48 .4 .33
+			}
+		}
+		geometry Cylinder {
+			height 0.16
+			radius 0.01
+		}
+	}
+
+}
+
+#taycam
+
+Transform {
+	translation	.04 0 .0725
+	children [
+		DEF tayCam Transform {
+			#translation	.04 0 .0725
+			children [
+				Shape {
+					appearance USE mau
+					geometry Box {
+						size 0.08 0.02 0.015
+					}
+				}
+
+				Transform {
+					translation	0.04 0 0
+					children Transform {
+						rotation 1 0 0 1.57
+		
+						children Shape {
+							appearance USE mau
+							geometry Cylinder {
+								height 0.015
+								radius 0.01
+							}
+						}
+					}
+				}
+			]
+		}
+	]
+}
+
+Transform {
+	translation	0.04 0 -.0725
+	children USE tayCam
+}

@@ -1,0 +1,181 @@
+#VRML V2.0 utf8
+
+PROTO BongBongs[
+  field	SFTime timechay 10,
+  field	SFColor	mau 230 38 130,
+  field	SFFloat	dotrongsuot 0.3,
+  field	SFFloat	bankinh 1,
+
+]
+{
+DEF  bongbong Transform	{ children [
+
+  Shape {
+
+	geometry Sphere { radius IS bankinh }
+	appearance Appearance {
+		material	Material { 
+		          diffuseColor IS mau
+			      transparency IS dotrongsuot
+		                         }
+	
+	}
+}
+
+]}
+
+
+
+
+DEF huong PositionInterpolator {
+		key	[0, 1]
+		keyValue [0 0 0, 0 5.7 0]
+	}
+
+	DEF chay TimeSensor {
+		cycleInterval IS timechay
+    	  loop TRUE
+	}
+
+
+	ROUTE chay.fraction_changed TO huong.set_fraction
+	ROUTE huong.value_changed TO bongbong.set_translation
+
+}
+
+
+
+ Transform {
+			 ## bong bong 1
+			 translation 0 0.2 0
+			 scale 0.6 1.3 1
+	  children [
+	
+	    	BongBongs	{bankinh 0.1}
+     	]
+
+    }		
+
+
+
+		 Transform {
+			
+
+		 		## bong bong 2
+		 translation 0.2 0.2 0
+		 scale 0.6 1.3 1
+	  children [
+	
+	    	BongBongs	{bankinh 0.1 timechay 6.2}
+     	]
+		  
+    }		
+
+
+
+		 Transform {
+			
+
+			## bong bong 3
+		 translation 0 0.2 -1
+		 scale 0.6 1.3 1
+	  children [
+	
+	    	BongBongs	{bankinh 0.15 timechay 6.2}
+     	]
+		  
+    }		
+
+
+	 Transform {
+			
+
+			## bong bong 4
+		 translation 0.5 0.2 -1
+		 scale 0.6 1.3 1
+	  children [
+	
+	    	BongBongs	{bankinh 0.15 timechay 7.2}
+     	]
+		  
+    }		
+
+
+
+	Transform {
+			
+
+			## bong bong 5
+		 translation 0.5 0.2 -1
+		 scale 0.6 1.3 1
+	  children [
+	
+	    	BongBongs	{bankinh 0.1 timechay 5.2}
+     	]
+
+		  
+    }		
+
+
+
+	Transform {
+			
+
+			## bong bong 6
+		 translation 0.5 0.2 -0.7
+		 scale 0.6 1.3 1
+	  children [
+	
+	    	BongBongs	{bankinh 0.1 timechay 5}
+     	]
+
+		  
+    }		
+
+
+
+	Transform {
+			
+
+			## bong bong 6
+		 translation 0.5 0.2 -1.7
+		 scale 0.6 1.3 1
+	  children [
+	
+	    	BongBongs	{bankinh 0.2 timechay 5.7}
+     	]
+
+		  
+    }	
+
+
+
+
+	Transform {
+			
+
+	  ## bong bong 7
+		 translation 0.5 0.2 -1
+		 scale 0.6 1.3 1
+	  children [
+	
+	    	BongBongs	{bankinh 0.25 timechay 5.3}
+     	]
+
+		  
+    }	
+
+
+	Transform {
+			
+
+	  ## bong bong 7
+		 translation 0.5 0.2 -1
+		 scale 0.6 1.3 1
+	  children [
+	
+	    	BongBongs	{bankinh 0.1 timechay 9.3}
+     	]
+
+		  
+    }	

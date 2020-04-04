@@ -1,0 +1,74 @@
+#VRML V2.0 utf8
+
+DEF	be Transform {
+	translation	0 0 0
+	children Shape {
+		appearance Appearance {
+			material Material {
+			diffuseColor 0.1412 0.5882 0.5882
+        	ambientIntensity 1.0
+        	specularColor 0 0 0
+        	shininess 0.145
+        	transparency 0.5
+			}
+		}
+
+		geometry Box {
+			size 6 3 5 
+		}
+	}
+}
+DEF	CA1 Transform {
+	#translation	-720 -138 720
+	translation	-.5 0 -2
+	scale .2 .2 .2 
+	children [
+		Inline {url "tuan/ca1.wrl"}
+	]
+}
+DEF	CA2 Transform {
+	#translation	-770 -130 870
+	translation	0 .5 0
+	scale .2 .2 .2  
+	children [
+		Inline {url "tuan/ca2.wrl"}
+	]
+}
+DEF	Bongbong Transform {
+	#translation	-720 -138 820
+	scale .2 .2 .2  
+	children [
+		Inline {url "tuan/bongbong.wrl"}
+	]
+}
+DEF	Bongbong2 Transform {
+	translation	2 -1 1
+	#translation	-790 -138 880
+	translation	0 -.5 0
+	scale .2 .2 .2   
+	children [
+		Inline {url "tuan/bongbong.wrl"}
+	]
+}
+DEF	Bongbong3 Transform {
+#	translation	-710 -138 880
+	translation	-2 -.5 -.5
+	scale .2 .2 .2 
+	children [
+		Inline {url "tuan/bongbong.wrl"}
+	]
+}
+
+DEF	Co Transform {
+	translation	2 -1 .5
+	scale .2 .2 .2
+	children  Inline	{
+		url	"tuan/cay.wrl"
+	}
+}
+
+Transform {
+	translation	-3.6 1 -1
+	scale .8 .8 .8
+	children USE Co
+}			 

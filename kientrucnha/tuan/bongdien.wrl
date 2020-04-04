@@ -1,0 +1,237 @@
+#VRML V2.0 utf8
+
+
+Transform {
+	rotation 0 1 0 -1.57
+	translation	-93.5 -19.8 5.5
+	children [
+			DEF Vetrubongdien_101 Transform {
+			translation	10 29.4 -55	
+			children [
+				DEF	GroupBongDien Group	{
+						children [
+							Transform {
+								translation	0 0 1	
+								children [
+									DEF	bongdien_tru Shape {
+									geometry Box {
+									size 0.5 0.2 8
+									}
+									appearance Appearance {
+									material Material {
+									diffuseColor 0.662745 0.662745 0.662745
+									} 
+					
+									}
+								}
+								]
+							}
+							Transform {
+								translation	0 -0.2 5   
+								children [
+										DEF	bongdien_trudoc Shape {
+											geometry Box {
+												size 0.5 0.6 0.2
+											}
+											appearance Appearance {
+												material Material {
+												diffuseColor 0.662745 0.662745 0.662745
+												} 
+					
+											}
+										}
+								]
+							}
+							Transform {
+								translation	0 -0.2 -3  
+								children [
+									USE	bongdien_trudoc
+								]
+							}
+						]
+					}
+			]
+		}
+		DEF BongColor_p1 Appearance {
+		   material DEF maubong_p1 Material {
+        		diffuseColor 1 1 .788	 
+		   }
+		}
+		DEF anhsang_101 SpotLight{
+        		  color 1 1 1
+    			  direction 0 -1 0
+				  intensity	0	 
+				  attenuation 1 0 0
+				  radius 70
+		}
+		DEF	Vebongdien_101 Transform {
+			translation	9.9 29.1 -54
+			children [
+				Transform {
+					translation	0.1 0 0
+					rotation 1 0 0 1.57
+					children [
+						Shape {
+							appearance USE BongColor_p1
+							geometry Cylinder {
+								radius 0.2
+								height 8
+							}
+						}
+						USE	anhsang_101
+					]
+				}
+		
+			]
+		}
+	]
+}
+
+#congtac
+Transform {
+	rotation 0 1 0 1.57
+	translation	-50 5 -3
+	children [
+		DEF	ctBongdien Transform {
+			rotation 0 0 1 1.57
+			children [
+				Shape {
+				geometry Box {
+						size 1.5 1.5 0.5
+					}
+					appearance Appearance {
+						material Material {
+							diffuseColor 0.678431 0.847059 0.901961
+							transparency 0
+						} 
+				
+					}
+				}
+			]
+		}
+		Transform {
+			rotation 0 0 1 1.57
+			children [
+				DEF	ctBatBong Transform	{
+					translation	0 0 0.3
+					rotation 0 1 0 -0.13
+					children [
+						Shape{
+							geometry Box {
+								size 0.2 0.8 0.2
+							}
+							appearance Appearance {
+								material Material {
+									diffuseColor 0.545098 0 0
+									transparency 0
+								} 
+				
+							}
+						}
+						DEF	batbongtouch TouchSensor	{}
+					]
+				}
+			]
+		}
+	]
+}
+#Thoi gian bat cong tac
+DEF	Thoigianbatcongtac TimeSensor {
+	cycleInterval  0.01
+}
+#Thoi gian tat cong tac
+DEF	Thoigiantatcongtac TimeSensor {
+	cycleInterval  0.01
+}
+DEF	Giatribatcongtac OrientationInterpolator {
+	key[ 0 1]
+	keyValue [
+		1 0 0 0,
+		1 0 0 0.13
+	]
+}
+DEF	Giatritatcongtac OrientationInterpolator {
+	key[ 0 1]
+	keyValue [
+		1 0 0 0,
+		1 0 0 -0.13
+	]
+}
+DEF	Batbong_timesensor TimeSensor {
+	cycleInterval 0.1
+}
+DEF	Tatbong_timesensor TimeSensor {
+	cycleInterval 0.1
+}
+DEF	Giatribatbong ScalarInterpolator {
+	key	[0 0.1]
+	keyValue [1 1]
+}
+DEF	Giatritatbong ScalarInterpolator {
+	key	[0 0.1]
+	keyValue [0 0]
+}
+PROTO S_batbong_01[				
+	eventIn SFTime toggle
+	eventOut SFTime openCommand
+	eventOut SFTime closeCommand
+	field SFBool isRolate FALSE
+]{
+	Script {								
+		eventIn SFTime toggle IS toggle
+		eventOut SFTime openCommand IS openCommand
+		eventOut SFTime closeCommand IS closeCommand
+		field SFBool isRolate IS isRolate
+		url "vrmlscript: 
+			function toggle( t ) {
+				if (isRolate) {
+					isRolate = FALSE;
+					closeCommand = t;
+				} else {
+					isRolate = TRUE;
+					openCommand = t;
+				}
+			}
+		"
+	}
+}
+DEF SCRIPTTHAYMAU Script {
+   eventIn SFBool clicked
+   eventOut SFColor color
+   field SFBool lit FALSE
+   url "vrmlscript:
+
+function clicked(val) {
+   if(val) {
+      if(lit) { 
+	 color = new SFColor( 0,0,0); 
+	 lit = FALSE;
+      }
+      else { 
+	 color = new SFColor(1, 1, 1); 
+	 lit = TRUE;
+      }
+   }
+}"
+}												 
+DEF S_BatBong01 S_batbong_01 {}
+ROUTE batbongtouch.touchTime TO S_BatBong01.toggle
+ROUTE S_BatBong01.openCommand TO Batbong_timesensor.startTime
+ROUTE S_BatBong01.closeCommand TO Tatbong_timesensor.startTime 
+ROUTE S_BatBong01.openCommand TO Thoigianbatcongtac.startTime
+ROUTE S_BatBong01.closeCommand TO Thoigiantatcongtac.startTime
+													   
+
+ROUTE Batbong_timesensor.fraction_changed TO Giatribatbong.set_fraction
+ROUTE Giatribatbong.value_changed TO anhsang_101.intensity
+ROUTE Tatbong_timesensor.fraction_changed TO Giatritatbong.set_fraction
+ROUTE Giatritatbong.value_changed TO anhsang_101.intensity
+
+ROUTE Thoigianbatcongtac.fraction_changed TO Giatribatcongtac.set_fraction
+ROUTE Giatribatcongtac.value_changed TO ctBatBong.rotation 
+ROUTE Thoigiantatcongtac.fraction_changed TO Giatritatcongtac.set_fraction
+ROUTE Giatritatcongtac.value_changed TO ctBatBong.rotation 
+
+#== Thay mau===
+ROUTE batbongtouch.isActive	TO SCRIPTTHAYMAU.clicked
+ROUTE SCRIPTTHAYMAU.color TO maubong_p1.emissiveColor

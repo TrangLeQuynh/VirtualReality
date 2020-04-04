@@ -1,0 +1,72 @@
+#VRML V2.0 utf8
+
+#VRML V2.0 utf8
+
+DEF	TruSanhNgoai Group {
+	children [
+		Transform {
+			translation	0 1.05 0
+			children DEF TS1 Shape {
+				appearance Appearance {
+					material Material {
+						diffuseColor 1 1 1
+					}
+				}
+				geometry Box{
+					size 0.25 0.8 0.25
+				}
+			}
+
+		}
+
+		Transform {
+			translation	0 1 0
+			children DEF TS2 Shape {
+				appearance Appearance {
+					material Material {
+						diffuseColor 1 1 1
+					}
+				}
+				geometry Box{
+					size 0.6 0.1 0.6
+				}
+			}
+
+		}
+
+		Transform {
+			#translation	0 1.3 0
+			children DEF TS3 Shape {
+				appearance Appearance {
+					material Material {
+						#diffuseColor 1 0 1
+					}
+					texture	ImageTexture {
+						url	"image\bg_truCot2.png"
+					}
+				}
+				geometry Box{
+					size 0.4 2 0.4
+				}
+			}
+		}
+
+		Transform {
+			translation	0 -1.2 0
+			children DEF TS4 Shape {
+				appearance Appearance {
+					material Material {
+						diffuseColor 1 1 0
+					}
+					texture	ImageTexture {
+						url	"image\bg_Go2.jpg"
+					}
+				}
+				geometry Box{
+					size 0.4 0.4 0.4
+				}
+			}
+
+		}
+	]
+}

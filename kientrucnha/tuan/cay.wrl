@@ -1,0 +1,219 @@
+#VRML V2.0 utf8
+
+
+PROTO cay[]
+{
+			 
+  DEF co Transform {
+
+	   scale 1 1 10
+
+	children [
+
+		Shape {
+		
+			geometry Cylinder	{height 2 radius 0.005}
+			appearance Appearance {
+				texture ImageTexture	{url "img/thannam1.png"}
+			
+			}
+		}
+	
+	]
+	}
+
+
+  DEF codichuyen OrientationInterpolator {
+		key	[0 0.25 0.5 0.75 1]
+		keyValue [0 0 0 0, 0 0 1 0.06,0 0 1 -0.06,0 0 1 0.06,0 0 1 -0.06]
+	}
+
+	DEF thoigian TimeSensor {
+		cycleInterval 12
+    	  loop TRUE
+	}
+
+
+	ROUTE thoigian.fraction_changed TO codichuyen.set_fraction
+	ROUTE codichuyen.value_changed TO co.set_rotation
+
+
+
+}
+
+
+ PROTO cay1[]
+{
+
+  Transform {
+
+      translation -0.99 0.06 0
+	  rotation 0 0 1 1.50
+	children[
+	
+		cay	{}
+	]
+
+  }
+}
+
+PROTO cay2[]
+{
+
+
+   Transform {
+	  translation 0.99 0.06 0
+	  rotation 0 0 1 -1.50
+	children[
+	
+		cay	{}
+	]
+
+  }
+}
+
+PROTO cay3[]
+{
+
+
+  Transform {
+
+	  translation 0.9 0.35 0
+	  rotation 0 0 1 -1.20
+	children[
+	
+		cay	{}
+	]
+
+  }
+
+}
+
+
+PROTO cay4[]
+{
+
+  Transform {
+	   translation -0.9 0.35 0
+	  rotation 0 0 1 1.20
+	children[
+	
+		cay	{}
+	]
+
+  }
+}
+
+
+PROTO cay5[]
+{
+
+  Transform {
+	   translation -0.5 0.85 0
+	  rotation 0 0 1 0.5
+	children[
+	
+		cay	{}
+	]
+
+  }
+}
+
+
+
+
+PROTO cay6[]
+{
+
+  Transform {
+	   translation 0.5 0.85 0
+	  rotation 0 0 1 -0.5
+	children[
+	
+		cay	{}
+	]
+
+  }
+
+}
+
+
+
+Transform {
+
+	
+	children [
+
+		Transform {
+			translation	0 1 0
+	    	children [cay {}
+  ]
+	}
+	Transform {
+	
+		children [
+		
+		cay1 {}
+		cay2 {}
+		cay3 {}
+		cay4 {}
+		cay5 {}
+		cay6 {}
+		]
+	
+	}
+
+   Transform {
+	
+	   rotation	0 1 0 0.8
+		children [
+		
+		cay1 {}
+		cay2 {}
+		cay3 {}
+		cay4 {}
+		cay5 {}
+		cay6 {}
+		]
+	
+	}
+
+
+
+   Transform {
+	
+	   rotation	0 1 0 -0.8
+		children [
+		
+		cay1 {}
+		cay2 {}
+		cay3 {}
+		cay4 {}
+		cay5 {}
+		cay6 {}
+		]
+	
+	}
+
+
+	 Transform {
+	
+	   rotation	0 1 0 1.2
+		children [
+		
+		cay1 {}
+		cay2 {}
+		cay3 {}
+		cay4 {}
+		cay5 {}
+		cay6 {}
+		]
+	
+	}
+
+	
+	]
+	
+}
+	
+

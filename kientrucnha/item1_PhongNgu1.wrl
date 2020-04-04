@@ -1,0 +1,293 @@
+#VRML V2.0 utf8
+
+DEF L1 SpotLight {
+    location .3 2.6 0
+	intensity 1
+    direction 0 -1 0
+	color .98 .78 .59
+    beamWidth 0.017
+    cutOffAngle 1.0708
+  }
+
+ Sound {
+	location 0 0 0
+	source DEF ac AudioClip { 
+		loop FALSE 
+		pitch 1.0 
+		url "sound/ah.wav" 
+	} 
+}
+
+Transform {
+	translation	-.2 -1.25 -0.9
+	children [
+		#TuongPhiaPhong1
+		DEF vacham Collision {
+		collide	TRUE
+		children [
+			Transform {
+				translation	0 1.25 -1.05
+				children [
+					Shape {
+						appearance DEF mauTuong Appearance {
+							material Material {
+								#diffuseColor 0 1 0
+							}
+						}
+
+						geometry Box {
+							size 1.6 2.5 0.1
+						}
+					}
+
+					Transform {
+						translation	0 -.85 0
+						children [
+							Transform {
+								translation	1.05 0 0
+								children DEF t1 Shape {
+									appearance USE mauTuong
+									geometry Box {
+										size 0.5 0.8 0.1
+									}
+								}
+							}
+							Transform {
+								translation	-1.05 0 0
+								children USE t1
+							}
+						]
+
+					}
+
+					Transform {
+						translation	0 1 0
+						children [
+							Transform {
+								translation	1.05 0 0
+								children DEF t12 Shape {
+									appearance USE mauTuong
+									geometry Box {
+										size 0.5 0.5 0.1
+									}
+								}
+							}
+							Transform {
+								translation	-1.05 0 0
+								children USE t12
+							}
+						]
+					}
+
+					#Tuong phia tu
+					Transform {
+						translation	1.76 0 0
+						children Shape {
+							appearance USE mauTuong
+							geometry Box {
+								size 0.92 2.5 0.1
+							}
+						}
+					}
+
+					#tuong phia kia
+					Transform {
+						translation	-1.55 0 0
+						children Shape {
+							appearance USE mauTuong
+							geometry Box {
+								size 0.5 2.5 0.1
+							}
+						}
+					}
+
+					#cuasoNho1 canh
+
+					Transform{ 
+						translation	0 0.15 0
+						children [
+							Transform {
+								translation	1.05 0 0
+								children [
+									DEF cua1 Inline {
+										url	"cuaSo1CanhAction.wrl"
+									}		  
+								]
+							}
+
+							Transform {
+								translation	-1.05 0 0
+								children [
+									DEF	cua2 Inline	{
+										url	"cuaSo1CanhAction.wrl"
+									}
+								]
+							}
+		
+						]
+					}
+
+				]
+			}
+
+
+			#TuongPhiaBenPhai
+			Transform {
+				translation	2.17 1.25 0.855
+				children Shape {
+					appearance USE mauTuong
+					geometry Box {	  
+						size 0.1 2.5 3.8
+					}
+				}
+			}
+
+
+			#Tuongben trai
+
+			Transform {
+				translation	-1.75 1.25 0.855
+				children [
+					Transform {
+						translation	-.004 0.15 0
+						children Transform {
+							rotation 0 1 0 -1.57
+							children[ 
+								Inline	{
+									url	"cuaSoLon.wrl"
+								}
+							]
+						}
+
+					}
+
+					#tuongduoi
+					Transform {
+						translation	0 -.85 0
+						children Shape {
+							appearance USE mauTuong
+							geometry Box {
+								size 0.1 0.8 1.5
+							}
+						}
+					}
+
+					#tuong tren
+					Transform {
+						translation	0 1 0
+						children Shape {
+							appearance USE mauTuong
+							geometry Box {
+								size 0.1 0.5 1.5
+							}
+						}
+					}
+
+					#tuong2 ben
+					Transform {
+						children [
+							Transform {
+								translation	0 0 -1.325
+								children DEF t2 Shape {
+									appearance USE mauTuong
+									geometry Box {
+										size 0.1 2.5 1.15
+									}
+								}
+							}
+
+							Transform {
+								translation	0 0 1.325 
+								children USE t2
+							}
+					
+		
+						]
+					}
+			
+				]
+
+			}
+
+		
+		#tuongTruoc cua
+		Transform {
+			translation	0 1.25 2.805
+			children [
+
+				#tuongnho
+				Transform {
+					translation	2.06 0 0
+					children Shape {
+						appearance USE mauTuong
+						geometry Box {
+							size 0.32 2.5 0.1
+						}
+					}
+				}
+
+				#cua
+				DEF cua Transform {
+					translation	1.5 -.16 0
+					scale 1 1.2 1
+					children [
+						Inline {
+							url "cuaPhongAction.wrl"
+						}
+					]
+				}
+
+				Transform {
+					translation	1.5 1.075 0
+					children Shape {
+						appearance USE mauTuong
+						geometry Box {
+							size 0.8 0.35 0.1
+						}
+					}
+				}
+
+				#tuong
+				Transform {
+					translation	-.35 0 0
+					children Shape {
+						appearance USE mauTuong
+						geometry Box {
+							size 2.9 2.5 0.1
+						}
+					}
+				}
+			]
+		}
+		]}
+
+		DEF doPhong Transform {
+			translation	0 0.15 .05
+			children Inline	{
+				url	"phongngu.wrl"
+			}
+	
+		}
+
+
+	]
+}
+
+#DEF sanNha Transform {
+#	translation	0 -1.275 0
+#	children Shape {
+#		appearance Appearance {
+#			material Material {
+#				diffuseColor 0 1 0
+#			}
+#		}
+ #
+#		geometry Box {
+#			size 4 0.05 3.95
+#		}
+#	}
+#}
+
+
+
+

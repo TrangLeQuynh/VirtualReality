@@ -1,0 +1,595 @@
+#VRML V2.0 utf8
+
+#khung tu
+
+LOD	{
+	range [25 40]
+	level [
+		Transform {
+			children [
+				Transform {
+					children[
+						Transform {
+							translation	0 .325 0
+							children DEF tren Shape {
+								appearance DEF mauGo Appearance {
+									texture	ImageTexture {
+										url	"image/bg_Go2.jpg"
+									}
+								}
+
+								geometry Box {
+									size 4.1 0.05 0.5
+								}
+							}
+
+						}
+
+						Transform {
+							translation	0 -.325 0
+							children USE tren
+						}
+
+						Transform {
+							translation	 2.025 0 0
+							children DEF ben Shape {
+								appearance USE mauGo
+								geometry Box {
+									size 0.05 0.6 0.5
+								}
+							}
+						}
+
+						Transform {
+							translation	-2.025 0 0
+							children USE ben
+						}
+
+						Transform {
+							translation	-1 0 0
+							scale 0.2 1 1.1
+							children USE ben
+						}
+
+						Transform {
+							translation	.51 0 0
+							scale 0.2 1 1.1
+							children USE ben
+						}
+
+						#lung
+						Transform {
+							translation	0 0 -.235
+							children Shape {
+								appearance USE mauGo
+								geometry Box {
+									size 4.1 0.6 0.05
+								}
+							}
+						}
+					]
+				}
+
+				#khung tu doi
+				Transform {
+					translation	1.25 -.85 0
+					children [
+						Transform {
+							translation	0 0 .235
+							children Inline	{
+								url	"canhTuBepDoiKinh.wrl"
+							}
+						}
+
+						Transform {
+							translation	.775 0 0
+							children DEF canh1 Shape {
+								appearance USE mauGo
+								geometry Box {
+									size 0.05 1.1 0.5
+								}
+							}
+						}
+
+						Transform {
+							translation	-.775 0 0
+							children USE canh1
+						}
+
+						#duoi
+						Transform {
+							translation	0 -.525 0
+							children DEF ngang1 Shape {
+								appearance USE mauGo
+								geometry Box {
+									size 1.5 0.05 0.5
+								}
+							}
+						}
+
+						Transform {
+							translation	0 .525 0
+							children USE ngang1
+						}
+
+						#lung
+						Transform {
+							translation	0 0 -.235
+							children Shape {
+								appearance USE mauGo
+								geometry Box {
+									size 1.6 1.1 0.05
+								}
+							}
+						}
+					]
+				}
+
+				#ke trang tri
+
+				Transform {
+					translation	-1.5 -.85 0
+					children [
+						Transform {
+							children DEF ke1 Shape {
+								appearance USE mauGo
+								geometry Box {
+									size 1.1 0.05 0.5
+								}
+							}
+						}
+
+						Transform {
+							translation	0 -.525 0
+							children USE ke1
+						}
+					]
+				}
+
+				#ong trang
+
+				Transform {
+					translation	-.25 -.85 0
+					children [
+						Transform {
+							translation	.675 0 0
+							children DEF canh2 Shape {
+								appearance USE mauGo
+								geometry Box {
+									size 0.05 1.1 0.5
+								}
+							}
+						}
+
+						Transform {
+							translation	-.675 0 0
+							children USE canh1
+						}
+
+						Transform {
+							children USE canh2
+						}
+
+						#duoi
+						Transform {
+							translation	0 -.525 0
+							children DEF ngang2 Shape {
+								appearance USE mauGo
+								geometry Box {
+									size 1.4 0.05 0.5
+								}
+							}
+						}
+
+						Transform {
+							translation	0 .525 0
+							children USE ngang1
+						}
+					]
+				}
+
+			]
+		}
+
+		Transform {
+			children [
+				Transform {
+					children[
+						Transform {
+							translation	0 .325 0
+							children DEF tren1 Shape {
+								appearance DEF mauGo1 Appearance {
+									material Material {
+										diffuseColor .18 .13 .14
+									}
+								}
+
+								geometry Box {
+									size 4.1 0.05 0.5
+								}
+							}
+
+						}
+
+						Transform {
+							translation	0 -.325 0
+							children USE tren1
+						}
+
+						Transform {
+							translation	 2.025 0 0
+							children DEF ben1 Shape {
+								appearance USE mauGo1
+								geometry Box {
+									size 0.05 0.6 0.5
+								}
+							}
+						}
+
+						Transform {
+							translation	-2.025 0 0
+							children USE ben1
+						}
+
+						Transform {
+							translation	-1 0 0
+							scale 0.2 1 1.1
+							children USE ben1
+						}
+
+						Transform {
+							translation	.51 0 0
+							scale 0.2 1 1.1
+							children USE ben1
+						}
+
+						#lung
+						Transform {
+							translation	0 0 -.235
+							children Shape {
+								appearance USE mauGo1
+								geometry Box {
+									size 4.1 0.6 0.05
+								}
+							}
+						}
+					]
+				}
+
+				#khung tu doi
+				Transform {
+					translation	1.25 -.85 0
+					children [
+						Transform {
+							translation	0 0 .235
+							children Inline	{
+								url	"canhTuBepDoiKinh.wrl"
+							}
+						}
+
+						Transform {
+							translation	.775 0 0
+							children DEF canh11 Shape {
+								appearance USE mauGo1
+								geometry Box {
+									size 0.05 1.1 0.5
+								}
+							}
+						}
+
+						Transform {
+							translation	-.775 0 0
+							children USE canh11
+						}
+
+						#duoi
+						Transform {
+							translation	0 -.525 0
+							children DEF ngang11 Shape {
+								appearance USE mauGo1
+								geometry Box {
+									size 1.5 0.05 0.5
+								}
+							}
+						}
+
+						Transform {
+							translation	0 .525 0
+							children USE ngang11
+						}
+
+						#lung
+						Transform {
+							translation	0 0 -.235
+							children Shape {
+								appearance USE mauGo1
+								geometry Box {
+									size 1.6 1.1 0.05
+								}
+							}
+						}
+					]
+				}
+
+				#ke trang tri
+
+				Transform {
+					translation	-1.5 -.85 0
+					children [
+						Transform {
+							children DEF ke11 Shape {
+								appearance USE mauGo1
+								geometry Box {
+									size 1.1 0.05 0.5
+								}
+							}
+						}
+
+						Transform {
+							translation	0 -.525 0
+							children USE ke11
+						}
+					]
+				}
+
+				#ong trang
+
+				Transform {
+					translation	-.25 -.85 0
+					children [
+						Transform {
+							translation	.675 0 0
+							children DEF canh21 Shape {
+								appearance USE mauGo1
+								geometry Box {
+									size 0.05 1.1 0.5
+								}
+							}
+						}
+
+						Transform {
+							translation	-.675 0 0
+							children USE canh11
+						}
+
+						Transform {
+							children USE canh21
+						}
+
+						#duoi
+						Transform {
+							translation	0 -.525 0
+							children DEF ngang21 Shape {
+								appearance USE mauGo1
+								geometry Box {
+									size 1.4 0.05 0.5
+								}
+							}
+						}
+
+						Transform {
+							translation	0 .525 0
+							children USE ngang11
+						}
+					]
+				}
+
+			]
+		}
+
+		Transform {
+			children [
+				Transform {
+					children[
+						Transform {
+							translation	0 .325 0
+							children DEF tren2 Shape {
+								appearance DEF mauGo2 Appearance {
+									material Material {
+										diffuseColor .21 .2 .2
+									}
+								}
+
+								geometry Box {
+									size 4.1 0.05 0.5
+								}
+							}
+
+						}
+
+						Transform {
+							translation	0 -.325 0
+							children USE tren2
+						}
+
+						Transform {
+							translation	 2.025 0 0
+							children DEF ben2 Shape {
+								appearance USE mauGo2
+								geometry Box {
+									size 0.05 0.6 0.5
+								}
+							}
+						}
+
+						Transform {
+							translation	-2.025 0 0
+							children USE ben2
+						}
+
+						Transform {
+							translation	-1 0 0
+							scale 0.2 1 1.1
+							children USE ben2
+						}
+
+						Transform {
+							translation	.51 0 0
+							scale 0.2 1 1.1
+							children USE ben2
+						}
+
+						#lung
+						Transform {
+							translation	0 0 -.235
+							children Shape {
+								appearance USE mauGo2
+								geometry Box {
+									size 4.1 0.6 0.05
+								}
+							}
+						}
+					]
+				}
+
+				#khung tu doi
+				Transform {
+					translation	1.25 -.85 0
+					children [
+						Transform {
+							translation	0 0 .235
+							children Inline	{
+								url	"canhTuBepDoiKinh.wrl"
+							}
+						}
+
+						Transform {
+							translation	.775 0 0
+							children DEF canh12 Shape {
+								appearance USE mauGo2
+								geometry Box {
+									size 0.05 1.1 0.5
+								}
+							}
+						}
+
+						Transform {
+							translation	-.775 0 0
+							children USE canh12
+						}
+
+						#duoi
+						Transform {
+							translation	0 -.525 0
+							children DEF ngang12 Shape {
+								appearance USE mauGo2
+								geometry Box {
+									size 1.5 0.05 0.5
+								}
+							}
+						}
+
+						Transform {
+							translation	0 .525 0
+							children USE ngang12
+						}
+
+						#lung
+						Transform {
+							translation	0 0 -.235
+							children Shape {
+								appearance USE mauGo2
+								geometry Box {
+									size 1.6 1.1 0.05
+								}
+							}
+						}
+					]
+				}
+
+				#ke trang tri
+
+				Transform {
+					translation	-1.5 -.85 0
+					children [
+						Transform {
+							children DEF ke12 Shape {
+								appearance USE mauGo2
+								geometry Box {
+									size 1.1 0.05 0.5
+								}
+							}
+						}
+
+						Transform {
+							translation	0 -.525 0
+							children USE ke12
+						}
+					]
+				}
+
+				#ong trang
+
+				Transform {
+					translation	-.25 -.85 0
+					children [
+						Transform {
+							translation	.675 0 0
+							children DEF canh22 Shape {
+								appearance USE mauGo2
+								geometry Box {
+									size 0.05 1.1 0.5
+								}
+							}
+						}
+
+						Transform {
+							translation	-.675 0 0
+							children USE canh12
+						}
+
+						Transform {
+							children USE canh22
+						}
+
+						#duoi
+						Transform {
+							translation	0 -.525 0
+							children DEF ngang22 Shape {
+								appearance USE mauGo2
+								geometry Box {
+									size 1.4 0.05 0.5
+								}
+							}
+						}
+
+						Transform {
+							translation	0 .525 0
+							children USE ngang12
+						}
+					]
+				}
+
+			]
+		}
+	]
+}
+
+Transform {
+	translation	0 0 0.235
+	children [
+		Transform {
+			translation	-1 0 0
+			children Inline	{
+				url	"canhTuBep.wrl"
+			}
+		}
+
+		Transform {
+			translation	2 0 0
+			scale 1.5 1 1
+			children Inline	{
+				url	"canhTuBep.wrl"
+			}
+		}
+
+		Transform {
+			translation	0.5 0 0
+			scale 1.5 1 1
+			children Inline	{
+				url	"canhTuBep.wrl"
+			}
+		}
+	]
+}
+

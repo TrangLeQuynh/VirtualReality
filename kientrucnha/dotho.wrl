@@ -1,0 +1,156 @@
+#VRML V2.0 utf8
+
+DEF khunganh Transform {
+	translation	0 -.02 0
+	children [
+		Transform {
+			translation	0 0 0
+			children DEF VienKhungNgang Shape {
+				appearance DEF go Appearance {
+					material Material {}
+					texture	ImageTexture {
+						url "image\bg_Go2.jpg"
+					}
+				}
+
+				geometry Extrusion {
+					crossSection [
+						0.01 0.03,0.03 0.01,
+					    0.03 -0.01,0.01 -.03,
+						-.01 -.03,-.03 -.01,
+						-.03 .01, -.01 .03,
+						.01 .03
+					]
+
+					spine [-.2 -.35 0, -.2 .35 0, .2 .35 0, .2 -.35 0,-.2 -.35 0]
+				}
+			}
+		}
+
+		Transform {
+			translation	0 0 -.002
+			children DEF anh Shape {
+				appearance Appearance {
+					texture	ImageTexture {
+						url	"image/hcm.jpg"
+					}
+				}
+
+				geometry Box {
+					size 0.4 0.7 0.0015
+				}
+			}
+		}
+
+		Transform {
+			translation	0 0 -.005
+			children Shape {
+				appearance USE go
+				geometry Box {
+					size 0.4 .7 0.001
+				}
+			}
+		}
+
+		Transform {
+			translation	0 -.45 0
+			scale 0.68 0.3 0.3
+			children Inline	{
+				url	"banNhoThoCung.wrl"
+			}
+		}
+		
+	]
+
+}
+
+
+DEF bat1 Transform {
+	translation	0 -.45 0.36
+	children [
+		Transform {
+			children Shape {
+				appearance DEF maucom Appearance {
+					material Material {
+						diffuseColor .88 .81 .53
+					}
+				}
+
+				geometry Cylinder {
+					radius .08
+					height .12
+				}
+			}
+		}
+
+		Transform {
+			translation	0 -.015 0
+			children Shape {
+				appearance USE maucom
+				geometry Cylinder {
+					radius .06
+					height .12
+				}
+			}
+		}
+
+		Transform {
+			translation	0 .22 0
+			children [
+				#huong
+				DEF huong Transform {
+					children Shape {
+						appearance Appearance {
+							material Material {
+								diffuseColor 1 .02 .02 
+							}
+						}
+
+						geometry Cylinder {
+							height .36
+							radius .0028
+						}
+					}
+				}
+
+				Transform {
+					translation	0 -.18 0
+					children Transform {
+						rotation 0 0 1 .12
+						children Transform {
+							translation	0 .18 0
+							children USE huong
+						}
+					}
+				}
+
+				Transform {
+					translation	0 -.18 0
+					children Transform {
+						rotation 0 0 1 -.12
+						children Transform {
+							translation	0 .18 0
+							children USE huong
+						}
+					}
+				}
+			]
+		}
+	]
+}
+
+Transform {
+	translation	0 0 -.18
+	children [
+		#bat huong 2
+		Transform {
+			translation	.25 0 0
+			children USE bat1
+		}
+
+		Transform {
+			translation	-.25 0 0
+			children USE bat1
+		}
+	]
+}

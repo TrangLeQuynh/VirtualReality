@@ -1,0 +1,278 @@
+#VRML V2.0 utf8
+
+#hop bao ngoai
+LOD	{
+	range [25 40]
+	level [
+		Transform {
+
+		children[
+			#mat tren
+
+			Transform {
+
+				translation	0 .15 0
+				children DEF matTren Shape {
+
+					appearance DEF maugo Appearance {
+						texture	ImageTexture {
+							url	"image\bg_Go2.jpg"
+						}
+
+					}
+
+					geometry Box {
+						size 0.98 0.01 0.6
+					}
+				}
+			}
+
+			Transform {
+				translation	0 -.15 0
+				children USE matTren
+			}
+
+			#mat ben
+			Transform {
+				translation	0 0 .295
+
+				children DEF MatBen Shape {
+					appearance USE maugo
+					geometry Box {
+						size .98 .31 0.01
+					}
+				}
+			}
+
+			Transform {
+				translation	0 0 -.295
+				children USE MatBen
+			}
+
+			#Mat sau mau trang
+			Transform {
+				translation	.495 0 0
+				children DEF matSauTrang Shape {
+					appearance DEF mautrang Appearance {
+						material Material {
+							diffuseColor .91 .91 .902
+						}
+					}
+					geometry Box {
+						size 0.01 0.31 0.6
+					}
+				}
+			}
+		]
+		}
+
+		Transform {
+
+			children[
+				#mat tren
+
+				Transform {
+
+					translation	0 .15 0
+					children DEF matTren1 Shape {
+
+						appearance DEF maugo1 Appearance {
+							material Material {
+								diffuseColor .18 .13 .14
+							}
+
+						}
+
+						geometry Box {
+							size 0.98 0.01 0.6
+						}
+					}
+				}
+
+				Transform {
+					translation	0 -.15 0
+					children USE matTren1
+				}
+
+				#mat ben
+				Transform {
+					translation	0 0 .295
+
+					children DEF MatBen1 Shape {
+						appearance USE maugo1
+						geometry Box {
+							size .98 .31 0.01
+						}
+					}
+				}
+
+				Transform {
+					translation	0 0 -.295
+					children USE MatBen1
+				}
+
+				#Mat sau mau trang
+				Transform {
+					translation	.495 0 0
+					children DEF matSauTrang1 Shape {
+						appearance DEF mautrang1 Appearance {
+							material Material {
+								diffuseColor .9 .9 .89
+						
+							}
+						}
+						geometry Box {
+							size 0.01 0.31 0.6
+						}
+					}
+				}
+			]
+		}
+
+		Transform {
+
+			children[
+				#mat tren
+
+				Transform {
+
+					translation	0 .15 0
+					children DEF matTren12 Shape {
+
+						appearance DEF maugo12 Appearance {
+							material Material {
+								diffuseColor .21 .2 .2
+							}
+
+						}
+
+						geometry Box {
+							size 0.98 0.01 0.6
+						}
+					}
+				}
+
+				Transform {
+					translation	0 -.15 0
+					children USE matTren12
+				}
+
+				#mat ben
+				Transform {
+					translation	0 0 .295
+
+					children DEF MatBen12 Shape {
+						appearance USE maugo12
+						geometry Box {
+							size .98 .31 0.01
+						}
+					}
+				}
+
+				Transform {
+					translation	0 0 -.295
+					children USE MatBen12
+				}
+
+				#Mat sau mau trang
+				Transform {
+					translation	.495 0 0
+					children DEF matSauTrang12 Shape {
+						appearance DEF mautrang12 Appearance {
+							material Material {
+								diffuseColor .89 .89 .86
+						
+							}
+						}
+						geometry Box {
+							size 0.01 0.31 0.6
+						}
+					}
+				}
+			]
+		}
+
+	]
+}
+
+DEF keotu Transform {
+	children [
+		DEF	planeSensorKeoTu PlaneSensor {
+			minPosition	-0.25 0
+			maxPosition	0 0
+		}
+
+		Transform {
+			children [
+				#hop tu 0.22x0.58
+				#ngang duoi
+				Transform {
+					translation	0 -.14 0
+					children Shape {
+						appearance USE mautrang
+						geometry Box {
+							size 0.98 .01 .58
+						}
+					}
+				}
+
+				#canh
+
+				Transform {
+					translation	0 -.025 0
+					children [
+						Transform {
+							translation	0 0 .289
+							children DEF canh Shape	{
+								appearance USE mautrang
+								geometry Box {
+									size .98 .22 0.01
+								}
+							}
+						}
+
+						Transform {
+							translation	0 0 -0.289
+							children USE canh
+						}
+					]
+				}
+			
+				#dang sau 
+				Transform{
+					translation	0.485 -0.025 0
+					children Shape {
+						appearance USE mautrang
+						geometry Box {
+							size 0.01 0.22 0.58
+						}
+					}
+				}
+
+				#cua
+
+				Transform {
+					translation	-.495 0 0
+					children [
+						USE	matSauTrang
+
+						Transform {
+							translation	-0.005 0 0
+							children Shape {   
+								appearance USE maugo
+								geometry Box {
+									size 0.01 0.015 0.06
+								}
+							}
+						}
+					]
+				}
+			]
+		}
+	] 
+
+
+}
+
+ROUTE planeSensorKeoTu.translation_changed TO keotu.translation
+

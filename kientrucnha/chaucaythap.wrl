@@ -1,0 +1,54 @@
+#VRML V2.0 utf8
+
+Transform {
+	children [
+		Transform {
+			translation	0 0 .25
+			children DEF b Shape {
+				appearance Appearance {
+					texture	ImageTexture {
+						url "image/bg7.jpg"
+					}
+				}
+
+				geometry Box {
+					size .6 .2 .1
+				}
+			}
+		}
+
+		Transform {
+			 translation 0 0 -.25
+			 children USE b
+		}
+
+		Transform {
+			translation	-.25 0 0
+			children DEF b2 Transform {
+				rotation 0 1 0 1.57
+
+				children USE b
+			}
+		}
+
+		Transform {
+			translation	.25 0 0
+			children USE b2
+		}
+	]
+}
+
+Transform {
+	children Shape {
+		appearance Appearance {
+			material Material {
+				diffuseColor 1 1 0
+			}
+
+		}
+
+		geometry Sphere	{
+			radius .4
+		}
+	}
+}

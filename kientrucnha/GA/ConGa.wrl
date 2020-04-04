@@ -1,0 +1,126 @@
+#VRML V2.0 utf8
+Sound {
+	
+	source DEF ac AudioClip { 
+		loop FALSE 
+		pitch 1.0 
+		url "sound/ah.wav" 
+	} 
+}
+DEF vacham Collision {
+	collide	TRUE
+	
+	children [
+		DEF dauga Transform {	  
+			rotation 0 0 1 .5
+			translation	.3 -.8 0
+			children[ 
+				Transform {
+					translation	 0 .8 0
+					children [
+						Inline	{
+							url	"dauGa.wrl"
+						}
+					]
+				}
+
+				DEF	tsDauGa TimeSensor {
+					cycleInterval 12
+					loop TRUE
+				}
+
+				DEF	oreintationInterpolator1 OrientationInterpolator {
+					key	[0 .2 .4 .6 .8 1]
+					keyValue [
+						0 0 1 0
+						0 0 1 2.6
+						0 0 1 1.9
+						0 0 1 2.6
+						0 0 1 1.9 
+						0 0 1 0
+					]
+				}
+			]
+		}
+
+
+
+		Transform {
+			translation	0.8 -.8 0
+			scale 1 .6 .4
+			children Shape {
+				appearance Appearance {
+					material Material {
+						diffuseColor .937 .56 .28
+					}
+				}
+
+				geometry Sphere	{
+					radius .6
+				}
+			}
+		}
+
+
+		Transform {
+			translation	.95 -.6 .23
+			children [
+				DEF canh Inline	{
+					url	"canhGa.wrl"
+				}
+			]
+
+		}
+
+		Transform {
+			translation	.95 -.6 -.23
+			children USE canh
+		}
+
+		#chân gà
+		Transform {
+			translation	.85 -1.35 0.13
+			children[
+				DEF chan1 Inline {
+					url "chanGa.wrl"
+				}
+			]
+		}
+
+		DEF CHAN1 Transform {
+			translation	.85 -1.35 -0.13
+			children [
+				USE chan1
+
+				DEF	tschan1 TimeSensor {
+					cycleInterval 5
+					loop TRUE
+				}
+
+				DEF	oreintationInterpolator2 OrientationInterpolator {
+					key	[0 .5 1]
+					keyValue [
+						0 0 1 0
+						0 0 1 .65
+						0 0 1 0
+					]
+				}
+			]
+
+			ROUTE tschan1.fraction_changed TO oreintationInterpolator2.set_fraction
+			ROUTE oreintationInterpolator2.value_changed TO	  CHAN1.rotation
+		}
+
+		Transform {
+			scale .8 .5 1
+			rotation 0 0 1 -.5
+			translation	1.65 -.8 0
+			children USE canh
+		}
+]}
+
+
+ROUTE tsDauGa.fraction_changed TO oreintationInterpolator1.set_fraction
+ROUTE oreintationInterpolator1.value_changed TO	dauga.rotation
+
+ROUTE vacham.collideTime TO	ac.startTime

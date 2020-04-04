@@ -1,0 +1,92 @@
+#VRML V2.0 utf8
+
+Transform {
+	children 
+	[	DEF mat Shape {
+			appearance DEF mauDau Appearance {
+				material Material {
+					diffuseColor .94 .765 .57
+				}
+			}
+
+			geometry Sphere	{
+				radius .15
+			}
+		}
+		
+		Transform {
+			rotation 0 0 1 1.57
+			translation	-.18 0 0
+			children Shape {
+				appearance Appearance {
+					material Material {
+						diffuseColor 1 1 0
+					}
+				}  
+
+				geometry Cone {
+				 bottomRadius .05
+				 height	.1
+				}
+			}
+		}
+
+		#mào gà
+		Transform {
+			translation	0 .15 0
+			children [
+				DEF	mao1 Transform {
+					scale .6 1 .3
+					children [
+						Shape {
+							appearance Appearance {
+								material Material {
+									diffuseColor 1 0 0
+								}
+							}
+
+							geometry Sphere	{
+								radius .08
+							}
+						}
+					]
+				}
+
+				Transform {
+					rotation 0 0 1 .8
+					translation	-.05 0 0
+					children USE mao1
+				}
+				Transform {
+					rotation 0 0 1 -.8
+					translation	.05 0 0
+					children USE mao1
+				}
+			]
+		}
+
+	]
+}
+
+Transform {
+	translation	0 -.2 0
+	children [
+		DEF co1 Transform {
+			children Shape {
+				appearance USE mauDau
+
+				geometry Cylinder {
+					height .4 
+					radius .1
+				}
+			}
+
+		}
+
+		Transform {
+			translation	0 -.4 0
+			children USE co1
+
+		}
+	]
+}

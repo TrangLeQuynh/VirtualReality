@@ -1,0 +1,182 @@
+#VRML V2.0 utf8
+
+Transform {
+	scale 0.25 0.6 0.6
+	children [
+		Transform {
+			#scale 0.3 0.6 0.6
+			translation	0 .64 0
+			children [
+				#mặt bàn
+
+				Transform {
+					children DEF matban Shape {
+						appearance DEF chatGo Appearance{
+							texture	ImageTexture {
+								url	"image\bg_Go2.jpg"
+							}
+						}
+
+						geometry Box {
+							size 1.2 0.034 0.6
+						}
+					}
+				}
+
+				#khung bao quanh
+
+				Transform {
+					translation	0 -0.05 0
+					children [
+
+						Transform {
+							translation	0 0 0.25
+							children DEF khung1 Shape {
+								appearance DEF chatGo2 Appearance {
+									texture	ImageTexture {
+										url	"image/bg3.jpg"
+										repeatS	TRUE
+										repeatT	TRUE
+									}
+								}
+								geometry Box {
+									size 1.12 0.12 0.02
+								}
+							}
+						}
+
+						Transform {
+							translation	0 0 -.25
+							children USE khung1
+						}
+
+
+						Transform {
+							translation	.55 0 0
+
+							children DEF khung2	Shape {
+								appearance USE chatGo2
+								geometry Box {
+									size 0.02 0.12 0.48
+								}
+							}
+						}
+
+						Transform {
+							translation	-.55 0 0
+							children USE khung2
+						}
+					]
+				}
+			]
+		}
+
+		#KhungChan
+		DEF khungChanBan Transform {
+			children	[
+				Transform {
+					translation	-0.56 0 -0.26
+					children DEF chanBan Shape {
+						appearance USE chatGo
+						geometry Box {
+							size 0.08 0.9 0.08
+						}
+					}
+				}
+
+				Transform {
+					translation	-0.56 0 0.26
+					children USE chanBan
+				}
+
+				Transform {
+					translation	0.56 0 0.26
+					children USE chanBan
+				}
+
+				Transform {
+					translation	0.56 0 -0.26
+					children USE chanBan
+				}
+
+				#KhungbaoQuanh
+				Transform {
+					translation	0 0.48 0
+					children [
+						Transform{
+							translation	0 0 -.26
+							children[ 
+								DEF khung12 Shape {
+									appearance USE chatGo
+									geometry Box {size 1.2 0.094 0.08}
+								}
+
+				
+							]
+						}
+
+						Transform {
+							translation	0 0 .26
+							children USE khung12
+						}
+
+						Transform {
+							translation	0.56 0 0
+							children DEF khung22 Shape{
+								appearance USE chatGo
+								geometry Box {
+									size 0.08 0.094 0.44
+								}
+							}
+						}
+
+						Transform {
+							translation	-.56 0 0
+							children USE khung22
+						}
+					]
+				}
+			]
+		}
+
+		#hoavan
+		Group {
+			children [
+				DEF hoavan1 Transform {
+	
+					children [
+						DEF hoatiet1 Transform {
+							scale 0.04 0.04 0.05
+							translation	0.467 0.15 0.26
+							children Inline	{
+								url	"hoaVanBanThoCung.wrl"
+							}
+						}
+
+						Transform {
+							translation	0 0 0.56
+							rotation 0 1 0 3.14
+							children USE hoatiet1
+						}
+					]
+				}
+
+				Transform {
+					translation	0 0 -0.56
+					children USE hoavan1
+				}
+			]
+		}
+
+
+	]
+}
+
+Transform {
+	translation	0.07 0.65 0
+	scale .04 .05 .04
+	children Inline	{
+		url	"LOHOA.WRL"
+	}
+}
+

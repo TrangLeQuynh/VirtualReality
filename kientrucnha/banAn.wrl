@@ -1,0 +1,329 @@
+#VRML V2.0 utf8
+
+LOD{
+	range [25 40]
+	level [
+		Transform {
+			children [
+				#matban
+				Transform {
+					children DEF matban Shape {
+						appearance DEF maugo Appearance {
+							texture	ImageTexture {
+								url	"image\bg_Go2.jpg"
+							}
+
+						}
+
+						geometry Box {
+							size 0.56 0.04 1.4
+						}
+					}
+				}
+
+				#Matkinh
+				Transform {
+					translation	0 0.025 0
+					children DEF matKinh Shape {
+						appearance Appearance {
+							material Material {
+								diffuseColor .91 .91 .902
+								transparency 0.1
+							}
+
+			
+						}
+						geometry Box {
+							size 0.56 0.01 1.4
+						}
+					}
+				}
+
+				#Các mat bao quanh mat ban - 0.12
+				Transform {
+					translation	0 -0.05 0
+					children [
+						Transform {
+							translation	0.24 0 0
+							children DEF benDai Shape {
+								appearance	USE	maugo
+								geometry Box {
+									size 0.008 0.06 1.28
+								}
+							}
+						}
+
+						Transform {
+							translation	-0.24 0 0
+							children USE benDai
+						}
+
+						#mat trươc sau
+
+						Transform {
+							translation	0 0 -0.636
+							children DEF benTruoc Shape	{
+								appearance USE maugo
+								geometry Box {
+									size 0.48 0.06 0.008
+								}
+							}
+						}
+
+						Transform {
+							translation	0 0 0.636
+							children USE benTruoc
+						}
+					]
+				}
+
+				#chan ban
+				Transform {	  
+					translation	0 -0.33 0
+					children [
+						Transform {
+							translation	0.24 0 -0.63
+							children DEF chanBan Shape {
+								appearance USE maugo
+								geometry Box {
+									size 0.05 0.66 0.05
+								}
+							}
+						}
+
+						Transform {
+							translation	-0.24 0 -.63
+							children USE chanBan
+						}
+
+						Transform {
+							translation	-0.24 0 .63
+							children USE chanBan
+						}
+
+						Transform {
+							translation	0.24 0 .63
+							children USE chanBan
+						}
+					]
+
+				}
+			]
+		}
+
+		Transform {
+			children [
+				#matban
+				Transform {
+					children DEF matban1 Shape {
+						appearance DEF maugo1 Appearance {
+							material Material {
+								diffuseColor .18 .13 .14
+							}
+
+						}
+
+						geometry Box {
+							size 0.56 0.04 1.4
+						}
+					}
+				}
+
+				#Matkinh
+				Transform {
+					translation	0 0.025 0
+					children DEF matKinh1 Shape {
+						appearance Appearance {
+							material Material {
+								diffuseColor .89 .89 .89
+								transparency 0.15
+							}
+
+			
+						}
+						geometry Box {
+							size 0.56 0.01 1.4
+						}
+					}
+				}
+
+				#Các mat bao quanh mat ban - 0.12
+				Transform {
+					translation	0 -0.05 0
+					children [
+						Transform {
+							translation	0.24 0 0
+							children DEF benDai1 Shape {
+								appearance	USE	maugo1
+								geometry Box {
+									size 0.008 0.06 1.28
+								}
+							}
+						}
+
+						Transform {
+							translation	-0.24 0 0
+							children USE benDai1
+						}
+
+						#mat trươc sau
+
+						Transform {
+							translation	0 0 -0.636
+							children DEF benTruoc1 Shape	{
+								appearance USE maugo1
+								geometry Box {
+									size 0.48 0.06 0.008
+								}
+							}
+						}
+
+						Transform {
+							translation	0 0 0.636
+							children USE benTruoc1
+						}
+					]
+				}
+
+				#chan ban
+				Transform {	  
+					translation	0 -0.33 0
+					children [
+						Transform {
+							translation	0.24 0 -0.63
+							children DEF chanBan1 Shape {
+								appearance USE maugo1
+								geometry Box {
+									size 0.05 0.66 0.05
+								}
+							}
+						}
+
+						Transform {
+							translation	-0.24 0 -.63
+							children USE chanBan1
+						}
+
+						Transform {
+							translation	-0.24 0 .63
+							children USE chanBan1
+						}
+
+						Transform {
+							translation	0.24 0 .63
+							children USE chanBan1
+						}
+					]
+
+				}
+			]
+		}
+
+		Transform {
+			children [
+				#matban
+				Transform {
+					children DEF matban2 Shape {
+						appearance DEF maugo2 Appearance {
+							material Material {
+								diffuseColor .21 .2 .2
+							}
+						}
+
+						geometry Box {
+							size 0.56 0.04 1.4
+						}
+					}
+				}
+
+				#Matkinh
+				Transform {
+					translation	0 0.025 0
+					children DEF matKinh2 Shape {
+						appearance Appearance {
+							material Material {
+								diffuseColor .86 .86 .855
+								transparency 0.2
+							}
+
+			
+						}
+						geometry Box {
+							size 0.56 0.01 1.4
+						}
+					}
+				}
+
+				#Các mat bao quanh mat ban - 0.12
+				Transform {
+					translation	0 -0.05 0
+					children [
+						Transform {
+							translation	0.24 0 0
+							children DEF benDai2 Shape {
+								appearance	USE	maugo2
+								geometry Box {
+									size 0.008 0.06 1.28
+								}
+							}
+						}
+
+						Transform {
+							translation	-0.24 0 0
+							children USE benDai2
+						}
+
+						#mat trươc sau
+
+						Transform {
+							translation	0 0 -0.636
+							children DEF benTruoc2 Shape	{
+								appearance USE maugo2
+								geometry Box {
+									size 0.48 0.06 0.008
+								}
+							}
+						}
+
+						Transform {
+							translation	0 0 0.636
+							children USE benTruoc2
+						}
+					]
+				}
+
+				#chan ban
+				Transform {	  
+					translation	0 -0.33 0
+					children [
+						Transform {
+							translation	0.24 0 -0.63
+							children DEF chanBan2 Shape {
+								appearance USE maugo2
+								geometry Box {
+									size 0.05 0.66 0.05
+								}
+							}
+						}
+
+						Transform {
+							translation	-0.24 0 -.63
+							children USE chanBan2
+						}
+
+						Transform {
+							translation	-0.24 0 .63
+							children USE chanBan2
+						}
+
+						Transform {
+							translation	0.24 0 .63
+							children USE chanBan2
+						}
+					]
+
+				}
+			]
+		}	
+	]
+}

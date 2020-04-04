@@ -1,0 +1,84 @@
+#VRML V2.0 utf8
+
+#ban ăn
+Transform {
+	translation	0 0 0
+	children DEF ban Inline {
+		url	"banAn.wrl"
+	}
+}
+
+
+#Xếp ghế
+
+Transform {
+	translation	0 -0.465 0
+	children [
+		DEF gheL1 Transform {
+
+			translation	-0.28 0 -0.32
+			children[  
+				DEF gheTrai Transform {
+					rotation 0 1 0 1.57
+					children Inline {
+						url	"GhePhongAn.wrl"
+					}
+				}
+		
+				DEF	planeSensorGheL1 PlaneSensor {
+					minPosition	-.5 0
+					maxPosition	-.28 0
+					offset	-0.28 0 -0.32 #vị trí đặt
+				}
+			]
+		}
+
+		DEF gheL2 Transform {
+
+			translation	-0.28 0 0.32
+			children[  
+				USE	gheTrai
+				DEF	planeSensorGheL2 PlaneSensor {
+					minPosition	-.5 0
+					maxPosition	-.28 0
+					offset -0.28 0 0.32
+				}
+			]
+		}
+
+		DEF gheR1 Transform {
+			translation	0.28 0 -0.32
+			children [
+				DEF ghePhai Transform {
+					rotation 0 1 0 -1.57
+					children Inline {
+						url	"GhePhongAn.wrl"
+					}
+				}
+				
+				DEF	planeSensorGheR1 PlaneSensor {
+					maxPosition	0.5 0
+					minPosition	0.28 0
+					offset 0.28 0 -0.32
+				}
+			]
+		}
+
+		DEF	gheR2 Transform	{
+			translation	0.28 0 0.32
+			children [
+				USE	ghePhai
+				DEF	planeSensorGheR2 PlaneSensor {
+					maxPosition	0.5 0
+					minPosition	0.28 0
+					offset	0.28 0 0.32
+				}
+			]
+		}
+	]
+}
+
+ROUTE planeSensorGheL1.translation_changed TO gheL1.translation
+ROUTE planeSensorGheL2.translation_changed TO gheL2.translation
+ROUTE planeSensorGheR1.translation_changed TO gheR1.translation
+ROUTE planeSensorGheR2.translation_changed TO gheR2.translation

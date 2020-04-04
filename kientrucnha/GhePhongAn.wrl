@@ -1,0 +1,436 @@
+#VRML V2.0 utf8
+
+LOD	{
+	range [25 40]
+	level [
+	
+
+Transform {
+	children [
+		#mat ghe
+		Transform {
+			translation	0 .175 0 
+			children DEF matghe Shape {
+				appearance DEF maugo Appearance {
+					texture	ImageTexture {
+						url	"image\bg_Go2.jpg"
+					}
+
+				}
+
+				geometry Box {
+					size 0.4 0.05 0.4
+				}
+			}
+		}
+
+		#dem ghe
+		Transform {
+			translation	0 0.215 0.02
+			children DEF dem Shape {
+				appearance Appearance {
+					material Material {
+				
+					}
+
+					texture	ImageTexture {
+						url	"image/vaiNhungDo.jpg"
+					}
+				}
+
+				geometry Box {
+					size 0.4 0.03 0.36
+				}
+			}
+		}
+
+		#changhe
+		Transform {
+			children [
+				Transform {
+					translation	.18 0 .18
+					children DEF changhe Shape {
+						appearance USE maugo
+						geometry Box {
+							size 0.04 0.4 0.04
+						}
+					}
+				}
+
+				Transform {
+					translation	.18 0 -.18
+					children USE changhe
+				}
+
+				Transform {
+					translation	-.18 0 -.18
+					children USE changhe
+				}
+
+				Transform {
+					translation	-.18 0 .18
+					children USE changhe
+				}
+
+
+				#ngang duoi chan ghe
+				Transform {
+					translation	0.18 0.086 0
+
+					children [
+						DEF thanhngang1 Shape {
+							appearance USE maugo
+							geometry Box {
+								size 0.012 0.03 0.4
+							}
+						}
+					]
+				}
+
+				Transform {
+					translation	-0.18 0.086 0
+					children USE thanhngang1
+				}
+			]
+		}
+
+
+		#do tua ghe
+
+		Transform {
+			translation	0 0.56 -.178
+			children [
+				Transform {
+					children DEF thanhNgangTua Shape {
+						appearance USE maugo
+						geometry Box {
+							size 0.4 0.05 0.02
+						}
+					}
+				}
+
+				Transform {
+					translation	0 -0.085 0
+					children USE thanhNgangTua
+				}
+
+				Transform {
+					translation	0 0.085 0
+					children USE thanhNgangTua
+				}
+			]
+		}
+
+		#Thanh tua tren
+		Transform {
+			children [
+				Transform {
+					translation	-0.18 0.38 -0.18
+					children [
+						Transform {
+							scale 1 1.6 1
+							children USE changhe
+						}
+					]
+				}
+
+				Transform {
+					translation	0.18 0.38 -0.18
+					children [
+						Transform {
+							scale 1 1.6 1
+							children USE changhe
+						}
+					]
+				}	
+			]
+		}
+	]
+}
+
+Transform {
+	children [
+		#mat ghe
+		Transform {
+			translation	0 .175 0 
+			children DEF matghe1 Shape {
+				appearance DEF maugo1 Appearance {
+					material Material {
+						   diffuseColor .18 .13 .14
+					}
+
+				}
+
+				geometry Box {
+					size 0.4 0.05 0.4
+				}
+			}
+		}
+
+		#dem ghe
+		Transform {
+			translation	0 0.215 0.02
+			children DEF dem1 Shape {
+				appearance Appearance {
+					material Material {
+						transparency .2
+					}
+
+					texture	ImageTexture {
+						url	"image/vaiNhungDo.jpg"
+					}
+				}
+
+				geometry Box {
+					size 0.4 0.03 0.36
+				}
+			}
+		}
+
+		#changhe
+		Transform {
+			children [
+				Transform {
+					translation	.18 0 .18
+					children DEF changhe1 Shape {
+						appearance USE maugo1
+						geometry Box {
+							size 0.04 0.4 0.04
+						}
+					}
+				}
+
+				Transform {
+					translation	.18 0 -.18
+					children USE changhe1
+				}
+
+				Transform {
+					translation	-.18 0 -.18
+					children USE changhe1
+				}
+
+				Transform {
+					translation	-.18 0 .18
+					children USE changhe1
+				}
+
+
+				#ngang duoi chan ghe
+				Transform {
+					translation	0.18 0.086 0
+
+					children [
+						DEF thanhngang11 Shape {
+							appearance USE maugo1
+							geometry Box {
+								size 0.012 0.03 0.4
+							}
+						}
+					]
+				}
+
+				Transform {
+					translation	-0.18 0.086 0
+					children USE thanhngang11
+				}
+			]
+		}
+
+
+		#do tua ghe
+
+		Transform {
+			translation	0 0.56 -.178
+			children [
+				Transform {
+					children DEF thanhNgangTua1 Shape {
+						appearance USE maugo1
+						geometry Box {
+							size 0.4 0.05 0.02
+						}
+					}
+				}
+
+				Transform {
+					translation	0 -0.085 0
+					children USE thanhNgangTua1
+				}
+
+				Transform {
+					translation	0 0.085 0
+					children USE thanhNgangTua1
+				}
+			]
+		}
+
+		#Thanh tua tren
+		Transform {
+			children [
+				Transform {
+					translation	-0.18 0.38 -0.18
+					children [
+						Transform {
+							scale 1 1.6 1
+							children USE changhe1
+						}
+					]
+				}
+
+				Transform {
+					translation	0.18 0.38 -0.18
+					children [
+						Transform {
+							scale 1 1.6 1
+							children USE changhe1
+						}
+					]
+				}	
+			]
+		}
+	]
+}
+
+Transform {
+	children [
+		#mat ghe
+		Transform {
+			translation	0 .175 0 
+			children DEF matghe2 Shape {
+				appearance DEF maugo2 Appearance {
+					material Material {
+						diffuseColor .21 .2 .2
+					}
+				}
+
+				geometry Box {
+					size 0.4 0.05 0.4
+				}
+			}
+		}
+
+		#dem ghe
+		Transform {
+			translation	0 0.215 0.02
+			children DEF dem2 Shape {
+				appearance Appearance {
+					material Material {
+					 transparency .3
+					}
+
+					texture	ImageTexture {
+						url	"image/vaiNhungDo.jpg"
+					}
+				}
+
+				geometry Box {
+					size 0.4 0.03 0.36
+				}
+			}
+		}
+
+		#changhe
+		Transform {
+			children [
+				Transform {
+					translation	.18 0 .18
+					children DEF changhe2 Shape {
+						appearance USE maugo2
+						geometry Box {
+							size 0.04 0.4 0.04
+						}
+					}
+				}
+
+				Transform {
+					translation	.18 0 -.18
+					children USE changhe2
+				}
+
+				Transform {
+					translation	-.18 0 -.18
+					children USE changhe2
+				}
+
+				Transform {
+					translation	-.18 0 .18
+					children USE changhe2
+				}
+
+
+				#ngang duoi chan ghe
+				Transform {
+					translation	0.18 0.086 0
+
+					children [
+						DEF thanhngang12 Shape {
+							appearance USE maugo2
+							geometry Box {
+								size 0.012 0.03 0.4
+							}
+						}
+					]
+				}
+
+				Transform {
+					translation	-0.18 0.086 0
+					children USE thanhngang12
+				}
+			]
+		}
+
+
+		#do tua ghe
+
+		Transform {
+			translation	0 0.56 -.178
+			children [
+				Transform {
+					children DEF thanhNgangTua2 Shape {
+						appearance USE maugo
+						geometry Box {
+							size 0.4 0.05 0.02
+						}
+					}
+				}
+
+				Transform {
+					translation	0 -0.085 0
+					children USE thanhNgangTua2
+				}
+
+				Transform {
+					translation	0 0.085 0
+					children USE thanhNgangTua2
+				}
+			]
+		}
+
+		#Thanh tua tren
+		Transform {
+			children [
+				Transform {
+					translation	-0.18 0.38 -0.18
+					children [
+						Transform {
+							scale 1 1.6 1
+							children USE changhe2
+						}
+					]
+				}
+
+				Transform {
+					translation	0.18 0.38 -0.18
+					children [
+						Transform {
+							scale 1 1.6 1
+							children USE changhe2
+						}
+					]
+				}	
+			]
+		}
+	]
+}
+	]
+}

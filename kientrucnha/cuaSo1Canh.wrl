@@ -1,0 +1,276 @@
+#VRML V2.0 utf8
+
+LOD{
+	level [
+		
+		DEF CuaSo Transform {
+		#	translation	-0.26 0 0
+			children [
+				DEF canhCua Transform {
+		#			translation	0.26 0 0
+					children [
+						DEF khung Transform {
+							children [
+								Transform {
+									translation	.22 0 0
+									children DEF khungDoc Shape	{
+										appearance DEF mauGo Appearance {
+											texture	ImageTexture {
+												url	"image/bg_Go2.jpg"
+											}
+										}
+										geometry Box {
+											size 0.06 1.2 0.05
+										}
+									}
+								}
+
+								Transform {
+									translation	-.22 0 0
+									children USE khungDoc
+								}
+
+								Transform {
+									translation	0 0.57 0
+									children DEF khungNgang Shape {
+										appearance USE mauGo
+										geometry Box {
+											size 0.5 0.06 0.05
+										}
+									}
+								}
+
+								Transform {
+									translation	0 -0.57 0
+									children USE khungNgang
+								}
+							]
+						}
+
+
+						#kính
+						DEF kinh Transform {
+							children DEF kinhCua Shape {
+								appearance Appearance {
+									material Material {
+										transparency 0.8
+									}
+								}
+
+								geometry Box {
+									size 0.38 1.08 0.025
+								}
+							}
+
+						}
+
+
+						#thanh ngang
+
+						DEF ngangNho Transform {
+							children [
+								Transform {
+									translation	0 0 0
+									children DEF ngang1 Shape {
+										appearance USE mauGo
+										geometry Box {
+											size 0.38 0.03 0.05
+										}
+									}
+								}
+
+								Transform {
+									translation	0 -.28 0
+									children USE ngang1
+								}
+
+								Transform {
+									translation	0 .28 0
+									children USE ngang1
+								}
+							]
+						}
+
+						DEF	docNho Transform {
+							children [
+								Transform {
+									#translation	0 0 0
+									children DEF doc1 Shape	{
+										appearance USE mauGo
+										geometry Box {
+											size 0.03 1.08 0.05
+										}
+									}
+								}
+							]
+						}
+					]
+				}
+
+
+
+			]
+		}
+
+
+		DEF CuaSo1 Transform {
+			#translation	-0.26 0 0
+			children [
+				DEF canhCua1 Transform {
+		#			translation	0.26 0 0
+					children [
+						DEF khung1 Transform {
+							children [
+								Transform {
+									translation	.22 0 0
+									children DEF khungDoc1 Shape	{
+										appearance DEF mauGo1 Appearance {
+											material Material {
+												#transparency .25
+												diffuseColor .18 .13 .14
+											}
+										
+										}
+										geometry Box {
+											size 0.06 1.2 0.05
+										}
+									}
+								}
+
+								Transform {
+									translation	-.22 0 0
+									children USE khungDoc1
+								}
+
+								Transform {
+									translation	0 0.57 0
+									children DEF khungNgang2 Shape {
+										appearance USE mauGo1
+										geometry Box {
+											size 0.5 0.06 0.05
+										}
+									}
+								}
+
+								Transform {
+									translation	0 -0.57 0
+									children USE khungNgang2
+								}
+							]
+						}
+
+
+						#kính
+						USE	kinh
+						#thanh ngang
+
+						DEF ngangNho1 Transform {
+							children [
+								Transform {
+									translation	0 0 0
+									children DEF ngang11 Shape {
+										appearance USE mauGo1
+										geometry Box {
+											size 0.38 0.03 0.05
+										}
+									}
+								}
+
+								Transform {
+									translation	0 -.28 0
+									children USE ngang11
+								}
+
+								Transform {
+									translation	0 .28 0
+									children USE ngang11
+								}
+							]
+						}
+
+						DEF	docNho1 Transform {
+							children [
+								Transform {
+									#translation	0 0 0
+									children DEF doc11 Shape	{
+										appearance USE mauGo1
+										geometry Box {
+											size 0.03 1.08 0.05
+										}
+									}
+								}
+							]
+						}
+			
+
+
+					]
+				}
+
+
+
+			]
+		}
+
+
+		DEF CuaSo2 Transform {
+			#translation	-0.26 0 0
+			children [
+				DEF canhCua2 Transform {
+		#			translation	0.26 0 0
+					children [
+						DEF khung2 Transform {
+							children [
+								Transform {
+									translation	.22 0 0
+									children DEF khungDoc2 Shape	{
+										appearance DEF mauGo2 Appearance {
+											material Material {
+												diffuseColor .18 .13 .14
+											}
+										}
+										geometry Box {
+											size 0.06 1.2 0.05
+										}
+									}
+								}
+
+								Transform {
+									translation	-.22 0 0
+									children USE khungDoc1
+								}
+
+								Transform {
+									translation	0 0.57 0
+									children DEF khungNgang3 Shape {
+										appearance USE mauGo2
+										geometry Box {
+											size 0.5 0.06 0.05
+										}
+									}
+								}
+
+								Transform {
+									translation	0 -0.57 0
+									children USE khungNgang3
+								}
+							]
+						}
+
+
+						#kính
+						USE	kinh
+
+
+					]
+				}
+
+
+
+			]
+		}
+
+	]
+
+	range [25 40]
+}

@@ -1,0 +1,29 @@
+#VRML V2.0 utf8
+
+Transform {
+	translation	0 0 0 
+
+	children [
+		Shape {
+			appearance Appearance {
+				material Material {
+					diffuseColor .882 .565 .2
+					specularColor .82 .28 .28
+					ambientIntensity .113
+					shininess .8
+				}
+			}
+			geometry Cylinder {
+				radius 1
+				height 2
+			}
+		}
+	]
+}
+Transform {
+	translation	0 1 0 
+	scale 0.7 0.7 0.7
+	children [
+		Inline {url "HOA.wrl"}
+	]
+}

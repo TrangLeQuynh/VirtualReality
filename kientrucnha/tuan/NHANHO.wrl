@@ -1,0 +1,291 @@
+#VRML V2.0 utf8
+
+DEF	nhanho Transform {
+	translation	0 0 0 
+	children [
+		DEF	SAN-vuon Transform {
+			translation	-180 78 -130
+			scale 0.6 0.5 0.5 
+			children [
+				Inline {url "SANVUON.wrl"}
+			]
+		}
+		DEF	C03 Transform {
+			translation	-469 -90	421
+			scale 0.7 0.7 0.7   
+			children [
+				Inline {
+					url	"GRASS.wrl"
+				}
+			]
+		}
+		DEF	C01 Transform {
+			translation	-469 -90	521
+			scale 0.7 0.7 0.7   
+			children [
+				Inline {
+					url	"GRASS.wrl"
+				}
+			]
+		}
+		DEF	C02 Transform {
+			translation	-469 -90	621
+			scale 0.7 0.7 0.7   
+			children [
+				Inline {
+					url	"GRASS.wrl"
+				}
+			]
+		}
+		DEF	C04 Transform {
+			translation	-469 -90	721
+			scale 0.7 0.7 0.7   
+			children [
+				Inline {
+					url	"GRASS.wrl"
+				}
+			]
+		}
+		DEF	C05 Transform {
+			translation	-369 -90	721
+			scale 0.7 0.7 0.7   
+			children [
+				Inline {
+					url	"GRASS.wrl"
+				}
+			]
+		}
+		DEF	C06 Transform {
+			translation	-369 -90	621
+			scale 0.7 0.7 0.7   
+			children [
+				Inline {
+					url	"GRASS.wrl"
+				}
+			]
+		}
+		DEF	C07 Transform {
+			translation	-369 -90	521
+			scale 0.7 0.7 0.7   
+			children [
+				Inline {
+					url	"GRASS.wrl"
+				}
+			]
+		}
+			DEF	C08 Transform {
+			translation	-369 -90	421
+			scale 0.7 0.7 0.7   
+			children [
+				Inline {
+					url	"GRASS.wrl"
+				}
+			]
+		}
+		DEF	C09 Transform {
+			translation	-239 -90	421
+			scale 0.7 0.7 0.7   
+			children [
+				Inline {
+					url	"GRASS.wrl"
+				}
+			]
+		}
+		DEF	C09 Transform {
+			translation	-239 -90	521
+			scale 0.7 0.7 0.7   
+			children [
+				Inline {
+					url	"GRASS.wrl"
+				}
+			]
+		}
+		DEF	C09 Transform {
+			translation	-239 -90	621
+			scale 0.7 0.7 0.7   
+			children [
+				Inline {
+					url	"GRASS.wrl"
+				}
+			]
+		}
+		DEF	C09 Transform {
+			translation	-239 -90	721
+			scale 0.7 0.7 0.7   
+			children [
+				Inline {
+					url	"GRASS.wrl"
+				}
+			]
+		}
+		DEF	C09 Transform {
+			translation	-139 -90	721
+			scale 0.7 0.7 0.7   
+			children [
+				Inline {
+					url	"GRASS.wrl"
+				}
+			]
+		}
+		DEF	C09 Transform {
+			translation	-139 -90	621
+			scale 0.7 0.7 0.7   
+			children [
+				Inline {
+					url	"GRASS.wrl"
+				}
+			]
+		}
+		DEF	C09 Transform {
+			translation	-139 -90	521
+			scale 0.7 0.7 0.7   
+			children [
+				Inline {
+					url	"GRASS.wrl"
+				}
+			]
+		}
+		DEF	C09 Transform {
+			translation	-139 -90	421
+			scale 0.7 0.7 0.7   
+			children [
+				Inline {
+					url	"GRASS.wrl"
+				}
+			]
+		}
+		DEF	CA1 Transform {
+			translation	-720 -138 720
+			scale 6 6 6 
+			children [
+				Inline {url "ca1.wrl"}
+			]
+		}
+		DEF	CA2 Transform {
+			translation	-770 -130 870
+			scale 6 6 6 
+			children [
+				Inline {url "ca2.wrl"}
+			]
+		}
+		DEF	Bongbong Transform {
+			translation	-720 -138 820
+			scale 7 7 7 
+			children [
+				Inline {url "bongbong.wrl"}
+			]
+		}
+		DEF	Bongbong2 Transform {
+			translation	-790 -138 880
+			scale 7 7 7 
+			children [
+				Inline {url "bongbong.wrl"}
+			]
+		}
+		DEF	Bongbong3 Transform {
+			translation	-710 -138 880
+			scale 7 7 7 
+			children [
+				Inline {url "bongbong.wrl"}
+			]
+		}
+		DEF	cay Transform {
+			translation	-710 -138 780
+			scale 7 7 7 
+			children [
+				Inline {url "cay.wrl"}
+			]
+		}
+		DEF	caydua1 Transform {
+			translation	-22900 -100	9200
+			scale 5 5 5   
+			children [
+				Inline {
+					url	"CAYDUA.wrl"
+				}
+			]
+		}
+		DEF	caydua2 Transform {
+			translation	-23900 -100	9250
+			scale 5 5 5   
+			children [
+				Inline {
+					url	"CAYDUA.wrl"
+				}
+			]
+		}
+		DEF	caydua3 Transform {
+			translation	-23100 -100	9200
+			scale 5 5 5   
+			children [
+				Inline {
+					url	"CAYDUA.wrl"
+				}
+			]
+		}
+		DEF	COT-DEN1 Transform {
+			translation	-430 -18 520
+			scale 21 22 21  
+			children [
+				Inline {url "COTDEN.wrl"}
+			]
+		}
+		DEF	COT-DEN2 Transform {
+			translation	-430 -18 320
+			scale 21 22 21  
+			children [
+				Inline {url "COTDEN.wrl"}
+			]
+		}
+		DEF	COT-DEN3 Transform {
+			translation	-430 -18 760
+			scale 21 22 21  
+			children [
+				Inline {url "COTDEN.wrl"}
+			]
+		}
+		DEF	KHOMCAY Transform {
+			translation	-580 -95 610
+			scale 0.3 0.3 0.3  
+			children [
+				Inline {url "KHOMCAY.wrl"}
+			]
+		}
+		DEF	KHOMCAY2 Transform {
+			translation	-780 -95 610
+			scale 0.3 0.3 0.3  
+			children [
+				Inline {url "KHOMCAY.wrl"}
+			]
+		}
+		DEF	CHAUCAY Transform {
+			translation	-730 19 320
+			scale 33 33 33   
+			children [
+				Inline {url "chaucay.wrl"}
+			]
+		}
+		DEF	CHAUCAY3 Transform {
+			translation	-630 19 390
+			scale 33 33 33   
+			children [
+				Inline {url "chaucay.wrl"}
+			]
+		}
+		DEF	CHAUCAY Transform {
+			translation	-730 19 120
+			scale 33 33 33  
+			children [
+				Inline {url "chaucay.wrl"}
+			]
+		}
+		DEF	Canhcong Transform {
+			translation	-303 -17 960
+			scale 32.7 28 31  
+			children [
+				Inline {url "canh_cong2.wrl"}
+			]
+		}
+		
+	]
+}

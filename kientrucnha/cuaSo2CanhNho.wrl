@@ -1,0 +1,42 @@
+#VRML V2.0 utf8
+
+DEF cuaTrai Transform {
+	translation	-0.5 0 0
+	children [
+		DEF	cylinderSendor1 CylinderSensor {
+			maxAngle 0
+			minAngle -1.57
+		}
+		Transform {
+			translation	0.25 0 0
+			children [
+				Inline {
+					url	"cuaSo1Canh.wrl"
+				}
+			]
+		}
+	]
+}
+
+
+DEF	cuaPhai Transform {
+	translation	0.5 0 0
+	children [
+		DEF	cylinderSendor2 CylinderSensor {
+			maxAngle 1.57
+			minAngle 0
+		}
+
+		Transform {
+			translation	-.25 0 0
+			children [
+				Inline {
+					url	"cuaSo1Canh.wrl"
+				}
+			]
+		}
+	]
+}
+
+ROUTE cylinderSendor1.rotation_changed TO cuaTrai.rotation
+ROUTE cylinderSendor2.rotation_changed TO cuaPhai.rotation

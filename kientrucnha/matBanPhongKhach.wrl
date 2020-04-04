@@ -1,0 +1,457 @@
+#VRML V2.0 utf8
+
+Transform {
+	translation	0 -.005 0
+	children [
+		LOD	{
+			range [25 40]
+			level [
+			
+		
+				Transform {
+					children [
+						#mat duoi
+						Transform {
+							translation	0 -0.03 0
+							children DEF matduoi Shape {
+								appearance DEF maugo Appearance {
+									texture	ImageTexture {
+										url	"image\bg_Go2.jpg"
+									}
+
+								}
+
+								geometry Box {
+									size 1 0.03 1.2
+								}
+							}
+						}
+
+						#mat tren
+						Transform{
+							translation	0 0.03 0
+							children [
+								#matkinh
+								Transform {
+									translation	0 0.02 0.005
+									children Shape {
+										appearance Appearance {
+
+											material Material {
+												#diffuseColor .129 .075 .098
+												diffuseColor .9 .9 .9
+												transparency 0.6
+											}
+										}
+
+										geometry Box {size 1 .01 1.2}
+									}
+								}
+								#khung truoc sau
+								Transform {
+									translation	0 0 0.585
+									children DEF khung1 Shape {
+										#appearance DEF maugo Appearance {
+										#	material Material {
+										#		diffuseColor .129 .075 .098
+										#	}
+										#}
+										appearance USE maugo
+										geometry Box {
+											size 1 .03 .03
+										}
+									}
+								}
+
+								Transform {
+									translation	0 0 -.585
+									children USE khung1
+								}
+
+								#khung ben
+								Transform {
+									translation	0.485 0 0
+									children DEF khung2 Shape {
+										appearance USE maugo
+										geometry Box {
+											size .03 .03 1.2
+										}
+									}
+								}
+
+								Transform {
+									translation	-.485 0 0
+									children USE khung2
+								}
+
+								#Họa tiết trang trí
+
+								Transform {
+									translation	0 0 .45
+									children [
+										Transform {
+											translation	0 0 0.045
+											children USE khung1
+										}
+
+										Transform {
+											translation	0 0 -.045
+											children USE khung1
+										}
+									]
+								}
+
+								Transform {
+									translation	0 0 .32
+									children USE khung1
+								}
+
+								Transform {
+									translation	0.3 0 0
+									children [
+										Transform {
+											translation 0.045 0 0
+											children USE khung2
+										}
+
+										Transform {
+											translation	-0.045 0 0
+											children USE khung2
+										}
+									]
+								}
+			
+							]
+						}
+
+						#Lien ket 2 mat
+						Transform {
+							children [
+								Transform {
+									translation	0.485 0 0.585
+									children DEF lk1 Shape {
+										appearance USE maugo
+										geometry Box {
+											size 0.03 0.03 0.03
+										}
+									}
+								}
+
+								Transform {
+									translation	0.485 0 -0.585
+									children USE lk1
+								}
+
+								Transform {
+									translation	-0.485 0 -0.585
+									children USE lk1
+								}
+
+								Transform {
+									translation	-0.485 0 0.585
+									children USE lk1
+								}
+							]
+						}
+					]
+				}
+
+				Transform {
+					children [
+						#mat duoi
+						Transform {
+							translation	0 -0.03 0
+							children DEF matduoi1 Shape {
+								appearance DEF maugo1 Appearance {
+									material Material {
+										diffuseColor .18 .13 .14
+									}
+								}
+
+								geometry Box {
+									size 1 0.03 1.2
+								}
+							}
+						}
+
+						#mat tren
+						Transform{
+							translation	0 0.03 0
+							children [
+								#matkinh
+								Transform {
+									translation	0 0.02 0.005
+									children Shape {
+										appearance Appearance {
+
+											material Material {
+												#diffuseColor .129 .075 .098
+												diffuseColor .9 .9 .9
+												transparency 0.7
+											}
+										}
+
+										geometry Box {size 1 .01 1.2}
+									}
+								}
+								#khung truoc sau
+								Transform {
+									translation	0 0 0.585
+									children DEF khung12 Shape {
+										#appearance DEF maugo Appearance {
+										#	material Material {
+										#		diffuseColor .129 .075 .098
+										#	}
+										#}
+										appearance USE maugo1
+										geometry Box {
+											size 1 .03 .03
+										}
+									}
+								}
+
+								Transform {
+									translation	0 0 -.585
+									children USE khung12
+								}
+
+								#khung ben
+								Transform {
+									translation	0.485 0 0
+									children DEF khung22 Shape {
+										appearance USE maugo1
+										geometry Box {
+											size .03 .03 1.2
+										}
+									}
+								}
+
+								Transform {
+									translation	-.485 0 0
+									children USE khung22
+								}
+
+								#Họa tiết trang trí
+
+								Transform {
+									translation	0 0 .45
+									children [
+										Transform {
+											translation	0 0 0.045
+											children USE khung12
+										}
+
+										Transform {
+											translation	0 0 -.045
+											children USE khung12
+										}
+									]
+								}
+
+								Transform {
+									translation	0 0 .32
+									children USE khung12
+								}
+
+								Transform {
+									translation	0.3 0 0
+									children [
+										Transform {
+											translation 0.045 0 0
+											children USE khung22
+										}
+
+										Transform {
+											translation	-0.045 0 0
+											children USE khung22
+										}
+									]
+								}
+			
+							]
+						}
+
+						#Lien ket 2 mat
+						Transform {
+							children [
+								Transform {
+									translation	0.485 0 0.585
+									children DEF lk12 Shape {
+										appearance USE maugo1
+										geometry Box {
+											size 0.03 0.03 0.03
+										}
+									}
+								}
+
+								Transform {
+									translation	0.485 0 -0.585
+									children USE lk12
+								}
+
+								Transform {
+									translation	-0.485 0 -0.585
+									children USE lk12
+								}
+
+								Transform {
+									translation	-0.485 0 0.585
+									children USE lk12
+								}
+							]
+						}
+					]
+				}
+
+				Transform {
+					children [
+						#mat duoi
+						Transform {
+							translation	0 -0.03 0
+							children DEF matduoi2 Shape {
+								appearance DEF maugo2 Appearance {
+									material Material {
+										diffuseColor .21 .2 .2
+									}
+
+								}
+
+								geometry Box {
+									size 1 0.03 1.2
+								}
+							}
+						}
+
+						#mat tren
+						Transform{
+							translation	0 0.03 0
+							children [
+								#matkinh
+								Transform {
+									translation	0 0.02 0.005
+									children Shape {
+										appearance Appearance {
+
+											material Material {
+												#diffuseColor .129 .075 .098
+												diffuseColor .9 .9 .9
+												transparency 0.86
+											}
+										}
+
+										geometry Box {size 1 .01 1.2}
+									}
+								}
+								#khung truoc sau
+								Transform {
+									translation	0 0 0.585
+									children DEF khung13 Shape {
+										#appearance DEF maugo Appearance {
+										#	material Material {
+										#		diffuseColor .129 .075 .098
+										#	}
+										#}
+										appearance USE maugo2
+										geometry Box {
+											size 1 .03 .03
+										}
+									}
+								}
+
+								Transform {
+									translation	0 0 -.585
+									children USE khung13
+								}
+
+								#khung ben
+								Transform {
+									translation	0.485 0 0
+									children DEF khung23 Shape {
+										appearance USE maugo2
+										geometry Box {
+											size .03 .03 1.2
+										}
+									}
+								}
+
+								Transform {
+									translation	-.485 0 0
+									children USE khung23
+								}
+
+								#Họa tiết trang trí
+
+								Transform {
+									translation	0 0 .45
+									children [
+										Transform {
+											translation	0 0 0.045
+											children USE khung13
+										}
+
+										Transform {
+											translation	0 0 -.045
+											children USE khung13
+										}
+									]
+								}
+
+								Transform {
+									translation	0 0 .32
+									children USE khung13
+								}
+
+								Transform {
+									translation	0.3 0 0
+									children [
+										Transform {
+											translation 0.045 0 0
+											children USE khung23
+										}
+
+										Transform {
+											translation	-0.045 0 0
+											children USE khung23
+										}
+									]
+								}
+			
+							]
+						}
+
+						#Lien ket 2 mat
+						Transform {
+							children [
+								Transform {
+									translation	0.485 0 0.585
+									children DEF lk13 Shape {
+										appearance USE maugo2
+										geometry Box {
+											size 0.03 0.03 0.03
+										}
+									}
+								}
+
+								Transform {
+									translation	0.485 0 -0.585
+									children USE lk13
+								}
+
+								Transform {
+									translation	-0.485 0 -0.585
+									children USE lk13
+								}
+
+								Transform {
+									translation	-0.485 0 0.585
+									children USE lk13
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+
+	]
+}

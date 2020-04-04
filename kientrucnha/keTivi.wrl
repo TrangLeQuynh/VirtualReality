@@ -1,0 +1,100 @@
+#VRML V2.0 utf8
+
+#Khung ke 1
+DEF kesach Transform {
+	children [
+
+		Transform {
+			scale 1.2 1.5 1 
+			translation	0 -0.25 0
+			children DEF khung Transform {
+	
+				children [
+					#tren duoi
+					Transform {
+						translation	0 0.398 0
+						children DEF khungTren Shape {
+							appearance DEF chatlieu Appearance {
+								material Material {
+									diffuseColor .91 .91 .902
+									ambientIntensity 0.2
+									#emissiveColor .91 .91 .902
+									shininess 0.1
+
+
+								}
+							}
+
+							geometry Box {
+								size 1.2 0.004 0.2
+							}
+						}
+					}
+
+					Transform {
+						translation	0 -.398 0
+						children USE khungTren
+					}
+
+					#2 canh ben
+
+					Transform {
+						translation	 0.598 0 0
+						children DEF khungCanh Shape {
+							appearance USE chatlieu
+							geometry Box {
+								size 0.004 0.8 0.2
+							}
+						}
+					}
+
+					Transform {
+						translation	-.598 0 0
+						children USE khungCanh
+					}
+				]
+		}
+
+		}
+		Transform {
+			translation	.4 0.4 0
+			scale 1 0.5 1
+			children USE khung
+		}
+
+
+		Transform {
+			translation	-.5 0.433 0
+			scale 1 0.9 1
+			children USE khung
+		}
+	]
+}
+
+
+DEF tepSach Transform {
+
+	translation	-1.015 0.2 0
+	children [
+		Inline {
+			url	"tepSach.wrl"
+		}
+	]
+}
+
+
+DEF	trangTri_cup Transform {
+	translation	0.86 0.202 0
+	scale 0.08 0.08 0.08
+	children Inline	{
+		url	"trangTri_Cup.wrl"
+	}
+}
+
+DEF	tivi Transform {
+
+	translation	0 -0.433 0
+	children Inline	{
+		url	"tivi.wrl"
+	}
+}

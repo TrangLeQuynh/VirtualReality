@@ -1,0 +1,70 @@
+#VRML V2.0 utf8
+
+
+#khung cua cong
+Transform {
+
+	translation	 -2.25 0 0
+	scale 1 1.1 1
+	children DEF tru Inline	{
+		url	"TruSanhNgoai.wrl"
+	}
+}
+
+Transform {
+	translation	2.25 0 0
+	scale 1 1.1 1
+	children USE tru 
+}
+
+Transform {
+	translation	0 1.5 0
+	scale 0.86 0.35 0.3
+	children DEF maiCong Transform {
+		rotation 0 1 0 1.57
+		children DEF mai Inline	{
+			url	"maiNho.wrl"
+		}
+	}
+}
+
+DEF right Transform {
+	translation	2 0 0
+	children [
+		Transform {
+			translation	-1 -.2 0
+			scale 1 1.35 1.35
+			children Inline	{
+				url	"CuaCongNgoai.wrl"
+			}
+		} 
+		DEF	cylinderSensor1 CylinderSensor {
+			minAngle 0
+			maxAngle 1.57
+		}
+	]
+}
+
+DEF left Transform {
+	translation	-2 0 0
+	children [
+		Transform {
+			translation	1 -.2 0
+			scale 1 1.35 1.35
+			rotation 0 1 0 3.14
+			children Inline	{
+				url	"CuaCongNgoai.wrl"
+			}
+		} 
+
+		DEF	cylinderSensor2	CylinderSensor {
+			maxAngle 0
+			minAngle -1.57
+		}
+	]
+}
+
+
+
+ROUTE cylinderSensor1.rotation_changed TO right.rotation
+ROUTE cylinderSensor2.rotation_changed TO left.rotation

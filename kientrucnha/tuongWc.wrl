@@ -1,0 +1,175 @@
+#VRML V2.0 utf8
+
+#cua
+DEF cua Transform {
+	translation	0.4 -.16 0
+	scale 1 1.2 1
+	children [
+		Transform {
+			translation	-.4 0 0
+			children 
+			[
+				Inline {
+					url "cuaPhong.wrl"
+				}
+
+				Transform {
+					translation	-.336 0 0
+					children [
+						#chanbam cua
+							DEF p1 Shape {
+								appearance DEF mau Appearance {
+									material Material {
+										diffuseColor .48 .4 .33
+									}
+								}
+
+								geometry Box {
+									size 0.025 0.06 0.095
+								}
+							}
+
+						#taycam
+						DEF	tayCam Transform {
+							children [
+								Inline {
+									url	"tayMoCua.wrl"
+								}
+							]
+						}
+					]
+				}
+		
+			]
+
+		}
+
+		DEF	cylinderSensor CylinderSensor {
+			minAngle 0
+			maxAngle 2.1
+		}
+	]
+}
+
+ROUTE cylinderSensor.rotation_changed TO cua.rotation
+
+
+Transform {
+	translation	0 1.075 0
+	children[
+	    Shape {
+			appearance DEF mauTuong Appearance {
+				material Material {}
+			}
+			geometry Box {
+				size .8 0.35 0.1
+			}
+		}
+
+	]
+}
+
+
+
+Transform {
+	translation	0.74 0 0
+	children
+	[	Shape {
+			appearance USE mauTuong
+			geometry Box {
+				size .68 2.5 0.1
+			}
+		}
+
+		Transform {
+			translation	0 -.5 -.05
+			children DEF lat Shape {
+				appearance DEF mauDa Appearance	{
+					material Material {
+					
+					}
+
+					texture	ImageTexture {
+						url	"image/gach1.jpg"
+					}
+				}
+
+				geometry Box {
+					size .68 1.5 0.03
+				}
+			}
+
+		
+		}
+	]
+}
+
+Transform {
+	translation	-.74 0 0
+	children[
+	    Shape {
+			appearance USE mauTuong
+			geometry Box {
+				size .68 2.5 0.1
+			}
+		}
+		Transform {
+			translation	0 -.5 -.05
+			children USE lat
+		}
+
+	]
+}
+
+Transform {
+	translation	 -1.08 -.5 -.95 
+	children Shape {
+		appearance USE mauDa
+		geometry Box {
+			size  0.03 1.5 1.85
+		}
+	}
+}
+
+Transform {
+	translation	 1.05 -.5 -.95 
+	children Shape {
+		appearance USE mauDa
+		geometry Box {
+			size  0.03 1.5 1.85
+		}
+	}
+}
+
+Transform {
+	translation	-1.02 -.15 -1.6
+	children [
+		LOD	{
+			level [
+				#level 1
+				DEF l1 Transform {
+					rotation 0 1 0 1.57
+					scale .025 .055 .025
+					translation	0 -.6 0
+					children Inline	{
+						url	"boncau.wrl"
+					}
+				}
+
+				#level 2
+				Transform {
+					translation	0 -.3 0
+					scale .8 .8 .8
+					children USE l1
+				}
+
+				Transform {
+					scale .5 .5 .5
+					children USE l1
+				}
+			]
+
+			#range [ 6 12]						
+		}
+	]
+}

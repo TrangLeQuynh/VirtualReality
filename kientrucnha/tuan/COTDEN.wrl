@@ -1,0 +1,160 @@
+#VRML V2.0 utf8
+
+DEF	cot_den Transform {
+	translation	0 -2 0
+	scale 0.5 0.5 0.5
+	children [
+		DEF goc Transform {
+			translation	0 -1 0
+			children [
+				Shape {
+					appearance Appearance {
+						material Material {
+							diffuseColor .23 .2 .43
+							specularColor .32 .4 .4
+							ambientIntensity .0733
+							shininess .54
+						}
+					}
+					geometry Cylinder {
+						height 4
+						radius 0.2
+					}
+				}
+			]
+		}
+		DEF goc1 Transform {
+			translation	0 3 0
+			children [
+				Shape {
+				
+
+					geometry Cylinder {
+						height 6
+						radius 0.15
+					}
+					appearance Appearance {
+						material Material {
+							ambientIntensity 0
+							shininess 0
+						}
+					}
+				}
+			]
+		}
+		DEF goc2 Transform {
+			translation	0 8 0
+			children [
+				Shape {
+				
+					geometry Cylinder {
+						height 4
+						radius 0.12
+					}
+					appearance Appearance {
+						material Material {
+							ambientIntensity 0
+							shininess 0
+						}
+					}
+				}
+			]
+		}
+		DEF	dinh Transform {
+			translation 0 10 0
+			children [
+				
+				Shape {
+					
+					geometry Sphere	{
+						radius 0.15
+					}
+					appearance Appearance {
+						material Material {
+							diffuseColor .38 .38 .42
+							specularColor .53 .53 .53
+							ambientIntensity .0933
+							shininess .93
+						}
+					}
+					
+				}
+			]
+		}
+		DEF thanh_ngang Transform {
+			translation	0.7 9.4 0
+			rotation 0 0 1 1.5433
+			children [
+				Shape {
+				
+					geometry Cylinder {
+						height 4
+						radius 0.09
+					}
+					appearance Appearance {
+						material Material {
+							ambientIntensity 0
+							shininess 0
+						}
+					}
+				}
+			]
+		}
+		DEF	thanh_cheo Transform {
+			translation	-0.5 9 0
+			rotation 0 0 1 0.7
+			children [
+				Shape {
+				
+					geometry Cylinder {
+						height 1.2
+						radius 0.06
+					}
+					appearance Appearance {
+						material Material {
+							ambientIntensity 0
+							shininess 0
+						}
+					}
+				}
+			]
+		}
+		DEF	che_den Transform {
+			translation	3.2 9.3 0
+			scale 1.5 0.5 1
+			children [
+				Shape {
+					appearance Appearance {
+						material Material {
+							ambientIntensity 0
+							shininess 0
+						}
+					}
+					geometry Sphere	{
+						radius 0.5
+					}
+				}
+			]
+		}
+			DEF	bong_den Transform {
+			translation	3.2 9.1 0
+			scale 1.3 1 1
+			children [
+				Shape {
+				
+					geometry Sphere	{
+						radius 0.3
+					}
+					appearance Appearance {
+						material Material {
+							ambientIntensity .569
+							diffuseColor 1 1 .278
+							specularColor .87 .25 .25
+							shininess 1
+						}
+					}
+				}
+			]
+		}
+	]
+}

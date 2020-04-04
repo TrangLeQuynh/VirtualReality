@@ -1,0 +1,164 @@
+#VRML V2.0 utf8
+
+
+Transform {
+	children [
+		DEF	touchSensorBatDen TouchSensor {}
+		DEF	phantren Shape {
+			appearance Appearance {
+				material Material {
+					transparency 0.5
+					#emissiveColor 1 0 0
+				}
+				texture	ImageTexture {
+					url	"image\hoatietdenngu-0111.png"
+				}
+			}
+
+			geometry Cylinder {
+				height 0.35
+				radius 0.2
+			}
+		}
+
+		DEF diemSang SpotLight {
+			location 0 1 0											
+			#color 1 0 0
+			ambientIntensity 1
+			on FALSE					#start FALSE
+			radius 3
+			intensity 1
+			#location -.3 2.6 -.2
+			#intensity .8
+    		direction 0 -1 0
+			#color .97 .67 .603
+    		beamWidth 0.017
+    		cutOffAngle 1.047
+
+		}
+
+		DEF	colorInterpolatorNode ColorInterpolator	{
+			key	[0 0.5 1]
+
+			keyValue [
+				1 0 0
+				1 1 0
+				0 1 1
+			]
+		}
+
+		DEF	timeSensorNode TimeSensor {
+			cycleInterval 8.0
+			loop TRUE
+		}
+
+		DEF	javascriptLamp Script {
+			eventIn	SFBool congTac
+			field SFBool bat_tat FALSE
+			eventOut SFBool	bongden
+			
+
+			url	"javascript:
+			function congTac(val)
+			{
+				if(val){
+					if(!bat_tat)
+					{
+						bongden=true;
+						bat_tat=true;
+					}
+					else{
+						bongden=false;
+						bat_tat=false;
+					}
+				}
+
+			}
+			"
+		}
+
+		
+	]
+}
+
+
+#process a interpolator node
+ROUTE timeSensorNode.fraction_changed TO colorInterpolatorNode.set_fraction
+ROUTE colorInterpolatorNode.value_changed TO diemSang.set_color
+
+ROUTE  touchSensorBatDen.isActive TO javascriptLamp.congTac
+ROUTE	javascriptLamp.bongden TO diemSang.on
+
+
+DEF TruDen Transform{
+	
+	translation	0 -.8 0
+	
+		children [ 
+			DEF chande Shape {
+				appearance DEF maude Appearance {
+					material Material {
+						diffuseColor .91 .91 .902
+					}
+				}
+
+				geometry Extrusion {
+					crossSection [
+						0 .2, .1 .17 ,.14 .14,.17 .1,.2 0,
+						.17 -.1, .14 -.14, .1 -.17, 0 -.2,
+						-.1 -.17, -.14 -.14, -.17 -.1, -.2 0,
+						-.17 .1, -.14 .14, -.1 .17, 0 .2
+					]
+
+					spine [ 0 0 0, 0 0.02 0, 0 .04 0, 0 .06 0]
+					scale [1 1 1, 0.8 .8 .8, .5 .5 .5, .3 .3 .3]
+				}
+			}
+
+			DEF	chande2 Transform {
+				children Shape {
+					appearance Appearance {
+						texture	ImageTexture {
+							url	"image\bg_Go2.jpg"
+						}
+					}
+
+					geometry Cylinder {
+						height 0.02
+						radius 0.22
+					}
+				}
+			}
+		
+			DEF	tru Transform {
+				translation	0 0.33 0
+				children [
+					Shape {
+						appearance USE maude
+						geometry Cylinder {
+							height 0.6
+							radius 0.03
+						}
+					}
+
+					#Transform {
+					#	translation	0 0.4 0
+					#	children  Shape {
+					#		appearance Appearance {
+					#			material Material {
+					#				transparency 0.65
+					#			}
+					#		}
+					#		geometry Sphere	{
+					#			radius 0.06
+					#		}
+					#	}
+					#}
+			  ]
+			}
+		]	#
+}			 #het phan tru den
+
+#ROUTE touchSensorCongTac.touchTime TO diemSang
+
+

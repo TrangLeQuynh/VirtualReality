@@ -1,0 +1,619 @@
+#VRML V2.0 utf8
+
+#khung tu
+
+LOD{
+	range [25 40]
+	level [
+	
+
+Transform {
+	children [
+		DEF khungtuQA Transform {
+			#de tren va guoi
+			children [
+				Transform {
+					translation	0 .94 0
+					children DEF de1 Shape {
+						appearance DEF maugo Appearance {
+							material Material {}
+							texture	ImageTexture {
+								url "image\bg_Go2.jpg"
+							}
+						}
+
+						geometry Box {
+							size 2 0.12	0.6 
+						}
+
+					}
+				}
+
+				Transform {
+					translation	0 -.94 0
+					children USE de1
+				}
+
+				#mat sau
+				Transform {
+					translation	0 0 -0.36
+					children Shape {
+						appearance USE maugo
+						geometry Box {
+							size 2 2 0.12
+						}
+					}
+				}
+
+				#2 mat ben
+				Transform {
+					translation	.94 0 -.06
+					children DEF matben1 Shape {
+						appearance USE maugo
+						geometry Box {
+							size 0.12 2 0.72
+						}
+					}
+				}
+
+				Transform {
+					translation	-.94 0 -.06
+					children USE matben1
+				}
+
+				#vach ngan trong
+
+				Transform {
+
+					children [
+						Transform {
+							children DEF vachDung Shape	{
+								appearance USE maugo
+								geometry Box {
+									size 0.04 2 0.6
+								}
+							}
+						}
+
+						Transform {
+							translation	0 .38 0
+							children DEF vachngang Shape {
+								appearance USE maugo
+								geometry Box {size 2 0.04 0.6}
+							}
+						}
+					]
+	
+				}
+		]}
+
+		#cửa tủ mở
+
+		DEF canhMauTrang Transform {
+			translation	0 0.68 0
+			children [
+				DEF	TuMo1 Transform {
+					translation	-.97 0 0.35
+					children [
+						Transform {
+							translation	0.47 0 0
+							children [
+								DEF c1 Transform {
+									children Shape {
+										appearance DEF mauBe Appearance{
+											material Material {
+												diffuseColor .91 .91 .902
+											}
+										}
+										geometry Box {size 1 0.6 0.1}
+									}
+								}
+				
+								#taycam
+								Transform {
+									translation	0.25 0 0.025
+									children DEF taycam Shape {
+										appearance USE maugo
+										geometry Box {size 0.2 0.1 0.15}
+									}
+								}
+			
+							]
+						}
+
+						DEF	cylinderSensorTuMo1 CylinderSensor {
+							offset 0
+							enabled	TRUE
+							diskAngle 0.001
+							autoOffset TRUE
+							minAngle -1.57
+							maxAngle 0
+			 
+						}
+					]
+					ROUTE cylinderSensorTuMo1.rotation_changed TO TuMo1.rotation
+				}
+
+
+				DEF	TuMo2 Transform	{
+					translation	.97 0 0.35
+					children [
+						Transform {
+							translation	-0.47 0 0
+							children [
+								USE	c1
+								Transform {
+									translation	-0.25 0 0.025
+									children USE taycam
+								}
+							]
+						}
+
+						DEF	cylinderSensorTuMo2 CylinderSensor {
+							offset 0
+							enabled	TRUE
+							diskAngle 0.001
+							autoOffset TRUE
+							minAngle 0
+							maxAngle 1.57
+			 
+						}
+					]
+					ROUTE cylinderSensorTuMo2.rotation_changed TO TuMo2.rotation
+				}
+
+			]
+		}
+
+
+		#cửa tủ kéo
+		Transform {
+			children [
+				Transform {
+					translation	-.5 -0.3 .35
+					children [
+						DEF tukeo1 Transform {
+							#translation	0 0 5
+							children [
+								 Shape {
+									appearance Appearance {
+										texture	ImageTexture {
+											url "image\mautuQA1.png"
+										}
+									}
+									geometry DEF tk Box {
+										size 1 1.4 0.1
+									}
+								}	
+
+								DEF	PlaneSensorQA1 PlaneSensor {
+									minPosition	0 0
+									maxPosition	1 0
+								}
+	
+							]
+							ROUTE PlaneSensorQA1.translation_changed TO	 tukeo1.translation
+						}
+					]
+				}
+
+				Transform {
+					translation	0.5 -0.3 .35
+					children [
+						DEF	tukeo2 Transform {
+							children [
+								Shape {
+									appearance Appearance {
+										texture	ImageTexture {
+											url "image\mautuQA.png"
+										}
+									}
+									geometry USE tk
+								}
+								DEF	PlaneSensorQA2 PlaneSensor {
+									minPosition	-1 0
+									maxPosition	0 0
+								}
+							]
+							ROUTE PlaneSensorQA2.translation_changed TO	tukeo2.translation
+						}
+					]
+				}	
+	
+			]
+		}
+	]
+}
+
+Transform {
+	children [
+		DEF khungtuQA1 Transform {
+			#de tren va guoi
+			children [
+				Transform {
+					translation	0 .94 0
+					children DEF de11 Shape {
+						appearance DEF maugo1 Appearance {
+							material Material {
+								diffuseColor .18 .13 .14
+							}
+							
+						}
+
+						geometry Box {
+							size 2 0.12	0.6 
+						}
+
+					}
+				}
+
+				Transform {
+					translation	0 -.94 0
+					children USE de11
+				}
+
+				#mat sau
+				Transform {
+					translation	0 0 -0.36
+					children Shape {
+						appearance USE maugo1
+						geometry Box {
+							size 2 2 0.12
+						}
+					}
+				}
+
+				#2 mat ben
+				Transform {
+					translation	.94 0 -.06
+					children DEF matben11 Shape {
+						appearance USE maugo1
+						geometry Box {
+							size 0.12 2 0.72
+						}
+					}
+				}
+
+				Transform {
+					translation	-.94 0 -.06
+					children USE matben11
+				}
+
+				#vach ngan trong
+
+				Transform {
+
+					children [
+						Transform {
+							children DEF vachDung1 Shape	{
+								appearance USE maugo1
+								geometry Box {
+									size 0.04 2 0.6
+								}
+							}
+						}
+
+						Transform {
+							translation	0 .38 0
+							children DEF vachngang1 Shape {
+								appearance USE maugo1
+								geometry Box {size 2 0.04 0.6}
+							}
+						}
+					]
+	
+				}
+		]}
+
+		#cửa tủ mở
+
+		DEF canhMauTrang1 Transform {
+			translation	0 0.68 0
+			children [
+				DEF	TuMo11 Transform {
+					translation	-.97 0 0.35
+					children [
+						Transform {
+							translation	0.47 0 0
+							children [
+								DEF c11 Transform {
+									children Shape {
+										appearance USE mauBe
+										geometry Box {size 1 0.6 0.1}
+									}
+								}
+				
+								#taycam
+								Transform {
+									translation	0.25 0 0.025
+									children DEF taycam1 Shape {
+										appearance USE maugo1
+										geometry Box {size 0.2 0.1 0.15}
+									}
+								}
+			
+							]
+						}
+						
+					]
+					
+				}
+
+
+				DEF	TuMo21 Transform	{
+					translation	.97 0 0.35
+					children [
+						Transform {
+							translation	-0.47 0 0
+							children [
+								USE	c11
+								Transform {
+									translation	-0.25 0 0.025
+									children USE taycam1
+								}
+							]
+						}
+
+						
+					]
+					
+				}
+
+			]
+		}
+
+
+		#cửa tủ kéo
+		Transform {
+			children [
+				Transform {
+					translation	-.5 -0.3 .35
+					children [
+						DEF tukeo11 Transform {
+							#translation	0 0 5
+							children [
+								 Shape {
+									appearance Appearance {
+										material Material {
+											transparency .15
+										}
+										texture	ImageTexture {
+											url "image\mautuQA1.png"
+										}
+									}
+									geometry DEF tk1 Box {
+										size 1 1.4 0.1
+									}
+								}	
+
+							
+	
+							]
+				
+						}
+					]
+				}
+
+				Transform {
+					translation	0.5 -0.3 .35
+					children [
+						DEF	tukeo21 Transform {
+							children [
+								Shape {
+									appearance Appearance {
+										material Material {
+											transparency .15
+										}
+										texture	ImageTexture {
+											url "image\mautuQA.png"
+										}
+									}
+									geometry USE tk
+								}
+							]
+						}
+					]
+				}	
+	
+			]
+		}
+	]
+}
+
+Transform {
+	children [
+		DEF khungtuQA2 Transform {
+			#de tren va guoi
+			children [
+				Transform {
+					translation	0 .94 0
+					children DEF de12 Shape {
+						appearance DEF maugo2 Appearance {
+							material Material {
+								diffuseColor .21 .2 .2
+							}
+						
+						}
+
+						geometry Box {
+							size 2 0.12	0.6 
+						}
+
+					}
+				}
+
+				Transform {
+					translation	0 -.94 0
+					children USE de12
+				}
+
+				#mat sau
+				Transform {
+					translation	0 0 -0.36
+					children Shape {
+						appearance USE maugo2
+						geometry Box {
+							size 2 2 0.12
+						}
+					}
+				}
+
+				#2 mat ben
+				Transform {
+					translation	.94 0 -.06
+					children DEF matben12 Shape {
+						appearance USE maugo2
+						geometry Box {
+							size 0.12 2 0.72
+						}
+					}
+				}
+
+				Transform {
+					translation	-.94 0 -.06
+					children USE matben12
+				}
+
+				#vach ngan trong
+
+				Transform {
+
+					children [
+						Transform {
+							children DEF vachDung2 Shape	{
+								appearance USE maugo2
+								geometry Box {
+									size 0.04 2 0.6
+								}
+							}
+						}
+
+						Transform {
+							translation	0 .38 0
+							children DEF vachngang2 Shape {
+								appearance USE maugo2
+								geometry Box {size 2 0.04 0.6}
+							}
+						}
+					]
+	
+				}
+		]}
+
+		#cửa tủ mở
+
+		DEF canhMauTrang2 Transform {
+			translation	0 0.68 0
+			children [
+				DEF	TuMo12 Transform {
+					translation	-.97 0 0.35
+					children [
+						Transform {
+							translation	0.47 0 0
+							children [
+								DEF c12 Transform {
+									children Shape {
+										appearance USE mauBe
+										geometry Box {size 1 0.6 0.1}
+									}
+								}
+				
+								#taycam
+								Transform {
+									translation	0.25 0 0.025
+									children DEF taycam2 Shape {
+										appearance USE maugo
+										geometry Box {size 0.2 0.1 0.15}
+									}
+								}
+			
+							]
+						}
+					   
+					]
+					
+				}
+
+
+				DEF	TuMo22 Transform	{
+					translation	.97 0 0.35
+					children [
+						Transform {
+							translation	-0.47 0 0
+							children [
+								USE	c12
+								Transform {
+									translation	-0.25 0 0.025
+									children USE taycam2
+								}
+							]
+						}
+					  
+					]
+					
+				}
+
+			]
+		}
+
+
+		#cửa tủ kéo
+		Transform {
+			children [
+				Transform {
+					translation	-.5 -0.3 .35
+					children [
+						DEF tukeo12 Transform {
+							#translation	0 0 5
+							children [
+								 Shape {
+									appearance Appearance {
+										material Material {
+											transparency .3
+										}
+										texture	ImageTexture {
+											url "image\mautuQA1.png"
+										}
+									}
+									geometry DEF tk2 Box {
+										size 1 1.4 0.1
+									}
+								}	
+
+						
+							]
+							
+						}
+					]
+				}
+
+				Transform {
+					translation	0.5 -0.3 .35
+					children [
+						DEF	tukeo22 Transform {
+							children [
+								Shape {
+									appearance Appearance {
+										material Material {
+											transparency .3
+										}
+										texture	ImageTexture {
+											url "image\mautuQA.png"
+										}
+									}
+									geometry USE tk2
+								}
+								
+							]
+							
+						}
+					]
+				}	
+	
+			]
+		}
+	]
+}
+
+	]
+}

@@ -1,0 +1,355 @@
+#VRML V2.0 utf8
+
+#nguoi
+		
+DEF	vacham Collision {
+	children [
+		Sound { 
+			source DEF ac AudioClip { 
+				loop FALSE 
+				pitch 1.0 
+				url "sound/ah.wav" 
+			} 
+		}
+
+		DEF	nguoi Transform	{
+			children [
+				#DauNguoi
+				Transform {
+					children [
+						Transform {
+							translation	0 0.05 -.05
+							children [
+								#vành mũ
+								Transform {
+									scale 1 0.08 1
+									children Shape {
+										appearance DEF mauMuDoi Appearance {
+											material Material {
+												emissiveColor 1 1 0
+											#	diffuseColor 1 0.5 0.2
+											}
+
+											texture	ImageTexture {
+												url	"image/bg_coi.jpg"
+											}
+										}
+
+										geometry Sphere	{
+											radius 0.2
+										}
+									}
+								}
+
+								#dinh mũ
+								Transform {
+									translation	0 0.04 0
+									children Shape {
+										appearance USE mauMuDoi
+										geometry Cylinder {
+											height 0.08
+											radius 0.085
+										}
+									}
+								}
+
+								#Mặt người
+								Transform {
+									translation	0 -0.03 0
+									children [
+										Shape {
+											appearance DEF mauDaNguoi Appearance {
+												material Material {
+													diffuseColor .98 .843 .8117
+												}
+											}
+
+											geometry Sphere	{
+												radius 0.08
+											}
+										}
+
+							
+										#cổ
+										Transform {
+											translation 0 -0.05 0
+											children Shape {
+												appearance USE mauDaNguoi
+												geometry Cylinder {
+													height 0.12
+													radius 0.025
+												}
+											}
+										}
+									]
+								}
+							]
+						}
+
+						#Than người
+						Transform {
+							translation	0 -0.34 -.05
+							children 
+							[
+								Shape {
+									appearance DEF mauAo Appearance	{
+										material Material {
+											diffuseColor 1 .3 .02
+										}
+
+										texture	ImageTexture {
+										#	url	"image/vaiNhungDo.jpg"
+										}
+									}
+
+									geometry Box {
+										size 0.2 0.33 0.18
+									}
+								}
+
+								Transform {
+									rotation 1 0 0 1.57
+									translation	0 0.165 0
+									children Shape {
+										appearance USE mauAo
+										geometry Cylinder {
+											height 0.18
+											radius 0.1
+										}
+									}
+								}
+
+								Transform {
+									translation	0 -.205 0
+									children Shape {
+										appearance DEF mauQuan Appearance {
+											material Material {
+												diffuseColor 0.898 0.694 0.33
+											}
+										} 
+
+										geometry Box {
+											size 0.2 0.08 0.18
+										}
+									}
+								}
+
+							]
+
+						}
+
+
+						#Chan 1
+						Transform {
+
+							translation	0.055 -.545 0.06
+							children DEF chan Transform {
+								children  [
+									Shape	{
+										appearance USE mauQuan
+
+										geometry Box {
+											size 0.09 0.08 0.35
+										}
+									}
+
+									Transform {
+										translation	0 -.14 0.135
+										children Shape {
+											appearance USE mauQuan
+											geometry Box {
+												size  0.09 0.3 0.08
+											}
+										}
+									}
+
+									#giay
+									Transform{
+										translation	0 -.315 .165
+										children [
+											Transform {
+												children Shape {
+													appearance USE mauAo
+													geometry Box {
+														size 0.09 0.05 0.15
+													}
+												}
+											}
+										]
+									}
+								]
+							}
+
+						}
+
+						#chan2
+						Transform {
+							translation	-.055 -.545 0.115
+							children USE chan
+						}
+
+					]
+				}
+			]
+		}
+
+	
+
+		#tay nguoi cau
+		Transform {
+			children [
+				Transform {
+					rotation 1 0 0 -.26
+					translation	0 -.08 -.16
+					children [
+						DEF giatCan Transform {
+							children [
+							
+								#DEF	touchSensor1 TouchSensor {}
+
+								DEF	ts TimeSensor {
+									cycleInterval 35
+									loop TRUE
+								}
+
+								DEF	orientationInterpolator1 OrientationInterpolator {
+									key [0 .05 .1 .15 .2 1]
+									keyValue [
+										1 0 0 0
+										1 0 0 -.35
+										1 0 0 -1.2
+										1 0 0 0
+										1 0 0 0
+										
+										1 0 0 0
+									]
+								}
+						
+								Transform {
+									translation	.0675 0 0
+									rotation 0 1 0 -.1
+									children DEF tay Transform {
+										rotation 1 0 0 1.047
+										translation	0 -.27 0.068
+										children [
+											Shape {
+												appearance USE mauAo
+												geometry Box {
+													size 0.065 .065 0.25
+												}
+											}
+
+											Transform {
+												translation	0 .0675 .1575
+												children Shape {
+													appearance USE mauAo
+													geometry Box {
+														size 0.065 0.2 0.065
+													}
+												}
+											}
+
+											Transform {
+												translation 0 .2 .1575
+												children Shape {
+													appearance USE mauDaNguoi
+													geometry Sphere	{
+														radius 0.042
+													}
+												}
+											}
+										]
+									}
+								}
+
+								Transform {
+									#rotation 0 0 1 -.26
+									rotation 0 1 0 .1
+									translation	-.0675 0 0
+									children USE tay
+								}
+
+								Transform {
+									translation	0 -.38 .62
+									children [
+										DEF dayCau Transform {
+											translation	0 -.78 .45
+											children [
+												Shape {
+													appearance DEF DayCau Appearance {
+														material Material{
+															diffuseColor 0 1 0
+															transparency 0.1
+														}
+													}
+
+													geometry Cylinder {
+														height 1.38
+														radius 0.003
+													}
+												}
+
+												Transform {
+													translation	0 -.67 0
+													scale 0.9 1 0.9
+													children Shape {
+														appearance Appearance {
+															material Material {
+																diffuseColor 1 1 0
+																emissiveColor 1 1 0
+															}
+														}
+
+														geometry Sphere	{
+															radius 0.03
+														}
+													}
+												}
+											]
+										}
+
+										DEF	canCau Transform {
+											rotation 1 0 0 -1.36
+											children Shape {
+												appearance DEF mauCanCau Appearance {
+													material Material {
+														
+													}
+
+													texture	ImageTexture {
+														url	"image/bg_Go2.jpg"
+													}
+												}
+
+												geometry Cylinder {
+													height 1 
+													radius 0.015
+												}
+											}
+										}
+									]
+								}
+							]
+						}
+					]
+				}
+
+				
+			]
+		}
+	]
+}
+
+Transform {
+	translation	0 -.738 -.036
+	scale 0.6 0.76 0.6
+	children Inline	{
+		url	"gheNho.wrl"
+	}
+}
+
+
+#ROUTE touchSensor1.touchTime TO	ts.startTime
+ROUTE ts.fraction_changed TO orientationInterpolator1.set_fraction
+ROUTE orientationInterpolator1.value_changed TO	giatCan.rotation
+ROUTE vacham.collideTime TO	ac.startTime

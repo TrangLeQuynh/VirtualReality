@@ -1,0 +1,375 @@
+#VRML V2.0 utf8
+
+LOD{
+	range [25 40]
+	level [
+		Transform {
+			rotation 0 1 0 3.14
+			children [
+				#MatGo
+				Transform {
+					translation	0 -.15 0
+					children Shape {
+						appearance DEF maugo Appearance {
+							
+							texture	ImageTexture {
+								url	"image\bg_Go2.jpg"
+							}
+
+					
+						}
+
+						geometry Box {
+							size 0.65 0.1 0.8
+						}
+					}
+				}
+
+				#matDemGhe
+				Transform {
+					translation	0 -.06 0
+					children Shape {
+						appearance DEF mauDem Appearance {
+							texture	ImageTexture {
+								url	"image\vaiNhungDo.jpg"
+							}
+						}
+
+						geometry Box {
+							size 0.65 0.08 0.8
+						}
+					}
+				}
+
+				#GhepTay Ghé
+
+				Transform {
+					children [
+						Transform {
+							translation	0 0 .45
+							children DEF tayGhe Inline	{
+								url	"tayGhePhongKhach.wrl"
+							}
+						}
+
+						Transform {
+							translation	0 0 -.45
+							children USE tayGhe
+						}
+					]
+				}
+
+				#tua lung
+				Transform {
+					translation	.305 0 0
+					children [
+						Transform {
+							translation	0 .38 0
+							children Shape {
+								appearance USE maugo
+								geometry Box {
+									size 0.04 0.04 0.8
+								}
+							}
+						}
+
+						#thanh nho
+						Transform {
+							translation	0 .3 0
+							children [
+								Transform {
+									translation	0 0.02 0
+									children DEF thanhNho Shape{
+										appearance USE maugo
+										geometry Box {
+											size 0.06 0.01 .8
+										}
+									}
+								}
+
+								Transform {
+									translation	0 -.02 0
+									children USE thanhNho
+								}
+							]
+						}
+
+						 #chanvuong
+
+						Transform {
+							translation	0 .075 0
+							children Shape {
+								appearance USE maugo
+								geometry Box {
+									size .06 .35 .8
+								}
+							}
+						}
+
+						#Tuacao hon
+
+						Transform {
+							translation	0 .42 0
+							children Shape {
+								appearance USE maugo
+								geometry Box {
+									size 0.04 0.1 0.5
+								}
+							}
+						}
+					]
+				}
+
+
+
+
+			]
+		}
+
+		Transform {
+			rotation 0 1 0 3.14
+			children [
+				#MatGo
+				Transform {
+					translation	0 -.15 0
+					children Shape {
+						appearance DEF maugo1 Appearance {
+							
+							material Material {
+								diffuseColor .18 .13 .14
+							}
+						}
+
+						geometry Box {
+							size 0.65 0.1 0.8
+						}
+					}
+				}
+
+				#matDemGhe
+				Transform {
+					translation	0 -.06 0
+					children Shape {
+						appearance DEF mauDem1 Appearance {
+							material Material {
+								transparency .2
+							}
+							texture	ImageTexture {
+								url	"image\vaiNhungDo.jpg"
+							}
+						}
+
+						geometry Box {
+							size 0.65 0.08 0.8
+						}
+					}
+				}
+
+				#GhepTay Ghé
+
+				Transform {
+					children [
+						Transform {
+							translation	0 0 .45
+							children DEF tayGhe1 Inline	{
+								url	"tayGhePhongKhach.wrl"
+							}
+						}
+
+						Transform {
+							translation	0 0 -.45
+							children USE tayGhe1
+						}
+					]
+				}
+
+				#tua lung
+				Transform {
+					translation	.305 0 0
+					children [
+						Transform {
+							translation	0 .38 0
+							children Shape {
+								appearance USE maugo1
+								geometry Box {
+									size 0.04 0.04 0.8
+								}
+							}
+						}
+
+						#thanh nho
+						Transform {
+							translation	0 .3 0
+							children [
+								Transform {
+									translation	0 0.02 0
+									children DEF thanhNho1 Shape{
+										appearance USE maugo1
+										geometry Box {
+											size 0.06 0.01 .8
+										}
+									}
+								}
+
+								Transform {
+									translation	0 -.02 0
+									children USE thanhNho1
+								}
+							]
+						}
+
+						 #chanvuong
+
+						Transform {
+							translation	0 .075 0
+							children Shape {
+								appearance USE maugo1
+								geometry Box {
+									size .06 .35 .8
+								}
+							}
+						}
+
+						#Tuacao hon
+
+						Transform {
+							translation	0 .42 0
+							children Shape {
+								appearance USE maugo1
+								geometry Box {
+									size 0.04 0.1 0.5
+								}
+							}
+						}
+					]
+				}
+
+
+
+
+			]
+		}
+
+		Transform {
+			rotation 0 1 0 3.14
+			children [
+				#MatGo
+				Transform {
+					translation	0 -.15 0
+					children Shape {
+						appearance DEF maugo12 Appearance {
+							
+							material Material {
+								diffuseColor .21 .2 .2
+							}
+						}
+
+						geometry Box {
+							size 0.65 0.1 0.8
+						}
+					}
+				}
+
+				#matDemGhe
+				Transform {
+					translation	0 -.06 0
+					children Shape {
+						appearance DEF mauDem12 Appearance {
+							material Material {
+								transparency .35
+							}
+							texture	ImageTexture {
+								url	"image\vaiNhungDo.jpg"
+							}
+						}
+
+						geometry Box {
+							size 0.65 0.08 0.8
+						}
+					}
+				}
+
+				#GhepTay Ghé
+
+				Transform {
+					children [
+						Transform {
+							translation	0 0 .45
+							children USE tayGhe
+						}
+
+						Transform {
+							translation	0 0 -.45
+							children USE tayGhe
+						}
+					]
+				}
+
+				#tua lung
+				Transform {
+					translation	.305 0 0
+					children [
+						Transform {
+							translation	0 .38 0
+							children Shape {
+								appearance USE maugo12
+								geometry Box {
+									size 0.04 0.04 0.8
+								}
+							}
+						}
+
+						#thanh nho
+						Transform {
+							translation	0 .3 0
+							children [
+								Transform {
+									translation	0 0.02 0
+									children DEF thanhNho12 Shape{
+										appearance USE maugo12
+										geometry Box {
+											size 0.06 0.01 .8
+										}
+									}
+								}
+
+								Transform {
+									translation	0 -.02 0
+									children USE thanhNho12
+								}
+							]
+						}
+
+						 #chanvuong
+
+						Transform {
+							translation	0 .075 0
+							children Shape {
+								appearance USE maugo12
+								geometry Box {
+									size .06 .35 .8
+								}
+							}
+						}
+
+						#Tuacao hon
+
+						Transform {
+							translation	0 .42 0
+							children Shape {
+								appearance USE maugo12
+								geometry Box {
+									size 0.04 0.1 0.5
+								}
+							}
+						}
+					]
+				}
+
+
+
+
+			]
+		}		
+	]
+}

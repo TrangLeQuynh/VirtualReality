@@ -1,0 +1,184 @@
+#VRML V2.0 utf8
+
+Transform {
+	children [
+		Transform
+		{
+			children DEF trongsuot Shape {
+				appearance Appearance {
+					material Material {
+						transparency 1
+					}
+
+
+				}
+				geometry Box {
+					size 2 1.8 .01
+				}
+			}
+		}
+		Transform {
+			translation	0 .85 0
+			children DEF ngang1 Shape {
+				appearance DEF mau Appearance {
+					material Material {
+						diffuseColor 0.8 0.79 .79
+					}
+				}
+
+				geometry  Box {
+					size 2 .1 .03
+				}
+			}
+		}
+
+		Transform {
+			translation	0 -.85 0
+			children USE ngang1
+		}
+
+		Transform {
+			translation	.95 0 0
+			children DEF doc1 Shape	{
+				appearance USE mau
+				geometry Box {
+					size .1 1.8 0.03
+				}
+			}
+		}
+
+		Transform {
+			translation	-.95 0 0
+			children USE doc1
+		}
+
+		Transform {
+			translation	.35 0 0
+			children [
+				Transform {
+					children DEF doc2 Transform {
+						
+						scale .7 1 1
+						children USE doc1
+					}
+				}
+
+				Transform {
+					translation	0.185 0 0
+					children USE doc2
+				}
+
+				Transform {
+					translation	-.185 0 0
+					children USE doc2
+				}
+
+				Transform {
+					translation	.37 0 0
+					children USE doc2
+				}
+
+				Transform {
+					translation	-.37 0 0
+					children USE  doc2
+				}
+
+			
+
+
+			]
+		}
+
+		Transform {
+			translation	0 .45 0
+			children [
+				Transform {
+					children DEF ngang2	Transform {
+						scale 1 .7 1
+						children USE ngang1
+					}
+				}
+
+				Transform {
+					translation 0 .185 0
+					children USE ngang2
+				}
+
+				Transform {
+					translation 0 -.185 0
+					children USE ngang2
+				}
+
+				Transform {
+					translation 0 .37 0
+					children USE ngang2
+				}
+
+				Transform {
+					translation 0 -.37 0
+					children USE ngang2
+				}
+			]
+		}
+
+		Transform {
+			translation	-.55 -.45 0
+			children Shape {
+				appearance USE mau
+				geometry Box {
+					size 0.7 .7 .03
+				}
+			}
+		}
+
+		Transform {
+			translation	-1 0 0
+			children 
+			[
+				LOD	{
+					range [20 30]
+					level [
+						Shape {
+							appearance Appearance {
+								texture	ImageTexture {
+									url	"image/bg_Go2.jpg"
+								}
+							}
+							geometry Box {
+								size .03 1.8 0.06
+							}
+						}
+
+						Transform {
+							children Shape {
+								appearance Appearance {
+									material Material {
+										#diffuseColor .424 .35 .32
+										diffuseColor .18 .13 .14
+									}
+								}
+
+								geometry Box {
+									size .03 1.8 0.06
+								}
+							}
+						}
+
+						Transform {
+							children Shape {
+								appearance USE mau
+
+								geometry Box {
+									size .03 1.8 0.06
+								}
+							}
+						}
+			
+				]
+
+			}
+			]
+		}
+			
+	]
+}

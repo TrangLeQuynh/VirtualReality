@@ -1,0 +1,226 @@
+#VRML V2.0 utf8
+
+
+Transform {
+	children [
+
+		#mặt bàn 1m*2m
+		Transform	  {
+			translation	0 0.27 0 
+			children Inline	{
+				url	"matBanPhongKhach.wrl"
+			}
+		}
+
+		LOD{
+		
+			range [25 40]
+			level [
+				Transform {
+					children [
+						#chanban
+						Transform {
+							translation 0 -.305 0
+							children DEF matduoi Shape {
+								appearance DEF maugo Appearance {
+									texture	ImageTexture {
+										url	"image\bg_Go2.jpg"
+									}
+
+								}
+
+								geometry Box {
+									size 1 0.03 1.2
+								}
+							}
+						}
+
+						#canh
+
+						Transform {
+							translation	0 -0.05 -.585
+							children Shape {
+								appearance USE maugo
+								geometry Box {
+									size 1 0.54 0.03
+								}
+							}
+						}
+
+						#tru chong
+
+						Transform {
+							translation	0 .12 .525
+							children [
+								DEF	tru Shape {
+									appearance Appearance {
+										material Material {
+											diffuseColor .83 .77 .72
+										}
+									}
+
+									geometry Cylinder {
+										height 0.2 
+										radius 0.02
+									}
+								}
+
+								Transform  {
+									translation	.35 0 0
+									children USE tru
+								}
+
+								Transform {
+									translation	-.35 0 0
+									children USE tru
+								}
+							]
+						}
+					]
+				}
+
+				Transform {
+					children [
+						#chanban
+						Transform {
+							translation 0 -.305 0
+							children Shape {
+								appearance DEF maugo1 Appearance {
+									material Material {
+										diffuseColor .18 .13 .14
+									}
+
+								}
+
+								geometry Box {
+									size 1 0.03 1.2
+								}
+							}
+						}
+
+						#canh
+
+						Transform {
+							translation	0 -0.05 -.585
+							children Shape {
+								appearance USE maugo1
+								geometry Box {
+									size 1 0.54 0.03
+								}
+							}
+						}
+
+						#tru chong
+
+						Transform {
+							translation	0 .12 .525
+							children [
+								DEF	tru1 Shape {
+									appearance Appearance {
+										material Material {
+											diffuseColor .83 .77 .72
+											transparency .1
+										}
+									}
+
+									geometry Cylinder {
+										height 0.2 
+										radius 0.02
+									}
+								}
+
+								Transform  {
+									translation	.35 0 0
+									children USE tru1
+								}
+
+								Transform {
+									translation	-.35 0 0
+									children USE tru1
+								}
+							]
+						}
+					]
+				}
+
+				Transform {
+					children [
+						#chanban
+						Transform {
+							translation 0 -.305 0
+							children Shape {
+								appearance DEF maugo12 Appearance {
+									material Material {
+										diffuseColor .21 .2 .2
+									}
+
+								}
+
+								geometry Box {
+									size 1 0.03 1.2
+								}
+							}
+						}
+
+						#canh
+
+						Transform {
+							translation	0 -0.05 -.585
+							children Shape {
+								appearance USE maugo12
+								geometry Box {
+									size 1 0.54 0.03
+								}
+							}
+						}
+
+						#tru chong
+
+						Transform {
+							translation	0 .12 .525
+							children [
+								DEF	tru12 Shape {
+									appearance Appearance {
+										material Material {
+											diffuseColor .83 .77 .72
+											transparency .2
+										}
+									}
+
+									geometry Cylinder {
+										height 0.2 
+										radius 0.02
+									}
+								}
+
+								Transform  {
+									translation	.35 0 0
+									children USE tru12
+								}
+
+								Transform {
+									translation	-.35 0 0
+									children USE tru12
+								}
+							]
+						}
+					]
+				}	
+			]
+		}
+
+		
+
+		#tuban
+		Transform {
+			translation	0 -0.135 0.3
+			children Inline	{
+				url	"nganKheoBanPhongKhach.wrl"
+			}
+		}
+
+
+	]
+}
+
+

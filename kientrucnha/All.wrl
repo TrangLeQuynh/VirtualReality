@@ -1,0 +1,298 @@
+#VRML V2.0 utf8
+
+
+Sound {
+	
+	source DEF ac AudioClip { 
+		loop FALSE 
+		pitch 1.0 
+		url "sound/ah.wav" 
+	} 
+}
+Transform {
+	#translation	0 1.25 0
+	children [
+		#nha
+		Transform {
+			translation	-2 0 0
+			children Inline	{
+				url	"item_HOUSEMAIN.wrl"
+			}
+		}
+
+		Transform {
+			translation	0.25 -2.05 0
+			children [
+
+				DEF duongdi Transform {
+					translation	1 0 20
+					children [
+						Shape {
+							appearance Appearance {
+								texture	ImageTexture {
+									url	"image/san-01.png"
+								}
+							}
+
+							geometry Box {
+								size 24.5 .2 5
+							}
+						}
+					]
+				}
+
+				Transform {
+					translation	1 0 0
+					children DEF nenda Shape{
+						appearance DEF gach Appearance {
+
+							texture	ImageTexture {
+								url	"image/sanda1-01.jpg"
+							}
+						}
+
+						geometry Box {
+							size 24 0.2 15
+						}
+					}
+				}
+
+				#lối đi
+				Transform {
+					translation	-.5 0 12.5
+					children 
+					[	Shape {
+						appearance Appearance	{
+							texture	ImageTexture {
+								url	"image/sanda2-01-01.png"
+							}
+						}		
+							geometry Box {
+								size 5 0.2 10
+							}
+						}
+
+						DEF hangden Transform {
+							translation	0 0 -1
+							children[
+								 DEF cotden Transform {
+									translation	-2.2 2.1 0
+									scale .6 .6 .6
+									children Inline	{
+										url	"tuan/COTDEN.wrl"
+									}
+								}
+
+								Transform {
+									translation	0 0 2.8
+									children USE cotden
+								}  
+
+								Transform {
+									translation	0 0 -2.8
+									children USE cotden
+								}
+							]
+						}
+
+						
+
+						
+					]
+					
+				}
+				#vuon ben trAI
+				Transform {
+					translation	-7 0 12.5
+					children [
+						Inline {
+							url	"vuontrai.wrl"
+						}
+					]
+				}
+
+				#vuong ben phai
+				Transform {
+					translation	15 0 12.5
+					children
+					[ 
+						Inline {
+							url	"vuonphai.wrl"
+						}
+					]
+				}
+			]
+		}
+
+		#cổng
+		Transform {
+			translation	-.5 -.55 17.5
+			children [
+				Inline	{
+					url "CongChinh.wrl"
+				}
+
+				DEF	vacham Collision {
+					children [
+				Transform {
+					translation	-6.5 0 0
+					children [
+						DEF h1 Inline {
+							url	"ghepHangRao.wrl"
+						}
+					]
+				}
+
+				Transform {
+					translation	6.5 0 0
+					children USE h1
+				}
+
+				Transform {
+					translation	10.5 0 0
+					children Inline	{
+						url	"hangrao.wrl"
+					}
+				}
+
+				Transform {
+					translation	11.5 0 0
+					children Inline	{
+						url	"hangrao.wrl"
+					}
+				}
+
+				Transform {
+					translation	12.5 0 0
+					children Inline	{
+						url	"hangrao.wrl"
+					}
+				}
+
+
+				Transform {
+					translation	13.5 0 0
+					#scale .5 1 1
+					children Inline	{
+						url	"hangrao.wrl"
+					}
+				}  ]}
+			
+			
+			]
+
+		}
+
+		DEF	vacham1 Collision {
+			children [
+		#hhang rao trai
+		DEF hangraotrai Transform {
+			translation	0 0 -3
+			scale 1 1 1.02
+			children [
+				Transform {
+					translation	-10.8 -.55 0
+					children [
+						DEF h2 Transform {
+							rotation 0 1 0 1.57
+							children USE h1
+						}
+					]
+				}
+
+				Transform {
+					translation	-10.8 -.55 8
+					children USE h2
+				}
+
+				Transform {
+					translation	-10.8 -.55 16
+					children USE h2
+				}
+			]
+		}
+
+		Transform {
+			translation	23.8 0 0
+			#scale 1 1.1 1
+			children USE hangraotrai
+		}
+		#hang rào sau
+		Transform {
+			translation	1 -.55 -7.2
+			children [
+				USE h1
+
+				Transform {
+					translation	8 0 0
+					children USE h1
+				}
+
+				Transform {
+					translation	-8 0 0
+					children USE h1
+				}
+			]
+		}
+	]}
+		
+	]
+}
+
+
+#nguoi quet san
+
+Transform {
+	translation	0 -.35 6
+	children Inline	{
+		url	"nguoi.wrl"
+	}
+}
+
+
+#thêm cây
+Transform {
+	translation	12 -.7 -6	 
+	scale .4 .4 .4
+	children Inline	{
+		url	"tuan/cay1.wrl"
+	}
+}
+
+
+#đàn gà
+Transform {
+	translation	5 -1.438 15
+	scale .3 .3 .3
+	children
+	[	
+		Sound {
+			location -.6 .15 0
+			source AudioClip {
+				loop TRUE
+				url	"sound/tiengga.wav"
+				description	"đàn gà"
+			}
+		}
+
+		Transform {
+			translation	1.5 0 -2
+			children Inline	{
+				url	"danga.wrl"
+			}
+		}
+
+		Transform {
+			
+			rotation 0 1 0 3.14
+			translation	-1 0 2.5
+			children Inline	{
+				url	"danga.wrl"
+			}
+
+		}
+	]
+}
+
+ROUTE vacham.collideTime TO	ac.startTime
+ROUTE vacham.collideTime TO	ac.startTime

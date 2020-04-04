@@ -1,0 +1,127 @@
+#VRML V2.0 utf8
+
+DEF phai Transform {
+	translation	.75 0 0
+	children [
+
+		DEF	cylinderSensor1 CylinderSensor {
+			maxAngle 1.57
+			minAngle 0
+		}
+		Transform {
+			translation	-0.375 0 0
+			children [
+				DEF	canhTu Transform {
+
+					children [
+						#khung
+						#2 ben
+						Transform{
+							translation	.35 0 0
+							children DEF ben Shape {
+								appearance DEF mauBe Appearance{
+									material Material {
+										diffuseColor .91 .91 .902
+									}
+								}
+
+								geometry Box {
+									size 0.05 1 0.03 
+								}
+							}
+						}
+
+						Transform {
+							translation	-.35 0 0
+							children USE ben
+						}
+
+						#duoi
+						Transform {
+							translation	0 -.45 0
+							children Shape {
+								appearance USE mauBe
+								geometry Box {
+									size .65 0.1 0.03
+								}
+							}
+						}
+
+						#tren
+						Transform {
+							translation	0 0.25 0 
+							children Shape {
+								appearance USE mauBe
+								geometry Box {
+									size 0.65 0.5 0.03
+								}
+							}
+						}
+
+						#kinh
+						Transform {
+							children Shape {
+								appearance Appearance {
+									material Material {
+										transparency 0.8
+									}
+								}
+
+								geometry Box {
+									size 0.65 0.8 0.02
+								}
+							}
+						}
+
+
+					]
+
+				}
+
+
+
+				#tay cam
+				Transform {
+					translation	-.3 0.15 0.02 
+					children DEF taycam Shape {
+						appearance Appearance {
+							material Material {}
+							texture	ImageTexture {
+								url	"image/bg_Go2.jpg"
+							}
+						}
+
+						geometry Box {
+							size 0.02 0.1 0.03 
+						}
+					}
+				}
+			]
+		}
+
+	]
+}
+
+DEF trai Transform {
+	translation	-.75 0 0
+	children [
+		DEF	cylinderSensor2	CylinderSensor {
+			minAngle -1.57
+			maxAngle 0
+		}
+		Transform {
+			translation	.375 0 0
+			children [
+				USE	canhTu
+				Transform {
+					translation	.3 .15 0.02
+					children USE taycam
+				}
+			]
+		}
+	]
+}
+
+
+ROUTE cylinderSensor1.rotation_changed TO phai.rotation
+ROUTE cylinderSensor2.rotation_changed TO trai.rotation

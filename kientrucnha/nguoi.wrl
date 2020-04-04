@@ -1,0 +1,339 @@
+#VRML V2.0 utf8
+
+# Cam ung va cham
+DEF col Collision {
+	children [
+		Sound { 
+			source DEF ac AudioClip { 
+				loop FALSE 
+				pitch 1.0 
+				url "sound/ah.wav" 
+			} 
+		}
+
+		DEF	nguoi Transform	{
+			children [
+
+				#mũ
+				Transform {
+					translation	0 .06 0
+					children [
+						Transform {
+							scale 1 .06 1
+							children Shape {
+								appearance DEF mauMu Appearance {
+									material Material {
+										diffuseColor .94 .35 .19
+									}
+								}
+								geometry Sphere	{
+									radius .35
+								}
+							}
+						}
+
+						Transform {
+							translation	0 .11 0
+							children Shape {
+								appearance USE mauMu
+								geometry Cone {
+									height .25
+									bottomRadius  .16
+								}
+							}
+						}
+					]
+				}
+		
+				#dau
+				Transform {
+				scale 1 1.2 1
+				children [
+					Shape {
+						geometry Sphere	{
+							radius .13
+						}
+						appearance DEF mauda Appearance {
+							material Material {
+								diffuseColor 1 .757 .76
+							}
+						}
+					}
+					]
+				}
+
+	
+				#Cổ
+				Transform {
+					translation	0 -.13 0
+					children [
+						Shape {
+							geometry Cylinder {
+								height .1
+								radius .06
+							}
+							appearance USE mauda
+
+						}
+					]
+				}
+
+
+				#Thân
+				Transform {
+					translation	0 -.47 0
+					children [
+						Shape {
+							geometry Box {
+								size .4 .6	.15
+							}
+							appearance DEF mauAo Appearance {
+								material Material {
+									diffuseColor .94 .35 .19
+								}
+							}
+						}
+					]
+				}
+
+				# Tay
+				DEF tayphai Transform {
+					rotation 1 0 0 -.6
+					translation	-.02 -.1 -.1
+					children DEF tay Transform {
+						children [
+		
+						Transform {
+							translation	0.3 -.35 0
+							rotation 0 0 1 .5
+							children [
+								Shape {
+									geometry Box {
+										size .06 .4 .05
+									}
+									appearance USE mauda
+								}
+							]
+						}
+		
+						Transform {
+							translation	0.22 -.6 0
+							#rotation 1 0 0 -1.047
+							children Transform {
+
+								rotation 0 0 1 -1.047
+								children [
+									Shape {
+										geometry Box {
+											size .06 .45 .05
+										}
+										appearance USE mauda
+									}
+								]
+							}
+						}
+		
+					]
+					}
+				}
+
+				DEF taytrai Transform {
+					rotation 1 0 0 -.6
+					translation	0 -.1 -.1
+					children Transform {
+						rotation 0 1 0 3.14
+						children USE tay 
+					}
+				}
+
+				# Chân
+				DEF chantrai Transform {
+					children [
+						DEF chan Transform {
+							children [
+								Transform {
+									translation	-.15 -1.15 0
+									children [
+										Shape {
+											geometry Box {
+												size .1 .8 .1
+											}
+
+											appearance Appearance {
+												material Material {
+													diffuseColor .14 .24 .5
+												}
+											}
+										}
+									]
+								}
+		
+			   
+								Transform {
+									translation	-.15 -1.575 0.05
+									children [
+										Shape {
+											geometry Box {
+												size .1 .05 .2
+											}
+											appearance USE mauAo 
+										}
+									]
+								}
+							]
+						} 
+
+						DEF	tsChanTrai TimeSensor {
+							cycleInterval 3
+							loop TRUE
+						}
+	
+						DEF	orientatioInterpolatporChanTrai OrientationInterpolator	{
+							key	[0 .25 .5 .75 1]
+							keyValue [
+								1 0 0 0
+								1 0 0 .15
+								1 0 0 0
+								1 0 0 -.15
+								1 0 0 0
+
+							]
+						}
+					]
+				}
+
+				DEF chanphai Transform {
+					translation	.3 0 0
+					children [
+						USE chan
+					  DEF	orientatioInterpolatporChanPhai OrientationInterpolator	{
+						key	[0 .25 .5 .75 1]
+						keyValue [
+							1 0 0 0
+							1 0 0 -.15
+							1 0 0 0
+							1 0 0 .15
+							1 0 0 0
+
+						]
+					}
+					]
+				}
+
+				DEF choiquet Transform {
+					translation	0 -.625 .32
+					children [
+						Transform {
+							translation	0 -.4 0
+							children Inline	{
+								url	"choi.wrl"
+							}
+						}
+
+						DEF	tsChoiQuet TimeSensor {
+							cycleInterval 2
+							loop TRUE
+					
+					
+						}
+
+						DEF	oreintationInterpolatorChoiQuet OrientationInterpolator {
+							key	[0 .35 .7 1]
+							keyValue [
+								0 0 1 -.4
+								0 0 1 0
+								0 0 1 .4
+								0 0 1 0
+							]
+						}
+					]
+
+					ROUTE tsChoiQuet.fraction_changed TO oreintationInterpolatorChoiQuet.set_fraction
+					ROUTE oreintationInterpolatorChoiQuet.value_changed	TO choiquet.rotation
+				}
+		
+			]
+		}
+
+	]
+}
+
+ROUTE col.collideTime TO ac.set_startTime
+
+
+
+DEF	tsNguoiChay TimeSensor {
+	cycleInterval 120
+	loop TRUE
+}
+
+DEF	positionInterpolatorNguoi  PositionInterpolator	{
+	key	[0 .05 .1 .15 .2 .25 .3 .35 .4 .45 .5 .55 .6 .65 .7 .75 .8 .85 .9 .95 1]
+	keyValue [
+		0 0 0			    #1
+		5 0 0			    #2
+		10 0 0				#3
+		10 0 -5				#4
+		10 0 -10			#5
+		10 0 -5				#6
+		10 0 0				#7
+		5 0 0				#8
+		-2 0 0				#9
+		-5 0 0				#10
+		0 0 0				#11
+		-1 0 0				#12
+		-1 0 5				#13
+		-1 0 8				#14
+		2 0 8				#15
+		2 0 5				#16
+		2 0 0				#17
+		0 0 0				#18
+		0 0 -2				#19
+		0 0 3				#20
+		0 0 0				#21
+	]
+}
+
+DEF	oreintationInterpolatorNguoi  OrientationInterpolator	{
+	key	[0 .05 .1 .15 .2 .25 .3 .35 .4 .45 .5 .55 .6 .65 .7 .75 .8 .85 .9 .95 1]
+	keyValue [
+		0 1 0 1.57					 #1
+		0 1 0 1.57					 #2
+		0 1 0 3.14					 #3
+		0 1 0 3.14					#4
+		0 1 0 6.28					  #5
+		0 1 0 6.28					  #6
+		0 1 0 -1.57					#7
+		0 1 0 -1.57					#8
+		0 1 0 -1.57				#9
+		0 1 0 1.57					#10
+		0 1 0 -1.57					#11
+		0 1 0 0						   #12
+		0 1 0 0						   #13
+		0 1 0 1.57					   #14
+		0 1 0 3.14					   #15
+		0 1 0 3.14					   #16
+		0 1 0 -1.57					   #17
+		0 1 0 3.14					   #18
+		0 1 0 0						   #19
+		0 1 0 0						   #20
+		0 1 0 0						   #21
+	]
+}
+
+#cho quet chổi
+
+
+
+ROUTE tsNguoiChay.fraction_changed TO positionInterpolatorNguoi.set_fraction
+ROUTE positionInterpolatorNguoi.value_changed TO nguoi.translation
+
+#action for chan 
+ROUTE tsChanTrai.fraction_changed TO orientatioInterpolatporChanTrai.set_fraction
+ROUTE tsChanTrai.fraction_changed TO orientatioInterpolatporChanPhai.set_fraction
+ROUTE orientatioInterpolatporChanTrai.value_changed	TO chantrai.rotation
+ROUTE orientatioInterpolatporChanPhai.value_changed	TO chanphai.rotation
+
+#xoay
+ROUTE tsNguoiChay.fraction_changed TO oreintationInterpolatorNguoi.set_fraction
+ROUTE oreintationInterpolatorNguoi.value_changed TO	nguoi.rotation

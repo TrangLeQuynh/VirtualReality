@@ -1,0 +1,98 @@
+#VRML V2.0 utf8
+
+WorldInfo {
+
+	title "Mô phỏng nhà làng quê theo phong cách hiện đại"
+	info "VRML, Lê Thị Quỳnh Trang - Nguyễn Đình Tuân thực hiện"
+}
+
+Background {
+    skyAngle	[ 0.075, 0.1, 0.2, 1.309, 1.5708 ]
+    skyColor	[ 1 1 0, .9 .9 .5, .7 .7 .9, 0 0.4 1, 0 0.7 1, 1 1 1 ]
+    groundAngle [ 0.75, 1.4, 1.5, 1.5708 ]
+    groundColor [ .16 .5 0, .16 .5 0, .36 .7 .2, .46 .8 .3, .66 1 .5 ]
+	
+}
+
+
+NavigationInfo {
+	avatarSize [.2 1 .175]
+	visibilityLimit	50
+	speed 1
+	#type "WALK"
+
+}
+
+Fog {
+	color 1 1 1
+	fogType "LINEAR"
+	visibilityRange 80
+}
+
+
+DEF v1 Viewpoint {
+	fieldOfView	0.785398
+	#position 0 -1.3245 40
+	position 0 0 50
+	orientation	0 0 1 0
+	description	"Hello !"
+	jump TRUE
+	
+}
+
+
+DEF anhNang DirectionalLight {
+	on TRUE
+	intensity 1
+	ambientIntensity 0.2
+	color .98 .99 .56
+	direction -3 -6 0
+}
+
+DEF sang DirectionalLight {
+	on TRUE
+	intensity 1
+	ambientIntensity 0.2
+	color 1 1 1
+	direction 0.5 0.84 0.21
+}
+
+
+
+
+
+
+
+	LOD	{
+		level [
+			#level 1
+			DEF nha Transform {
+				#translation	0 -.2 -15
+				translation	-1.15 0 -7.5
+				children [
+			
+					Inline	{
+						url	"kientrucnha/All.wrl"
+					}
+				]					  
+			}
+
+			#level 2
+			Transform {
+				#translation	0 -.8 0
+				scale .8 .8 .8
+				children USE nha
+			}
+
+			#level 3
+			Transform {
+				#translation	0 -1.2 0
+				scale .5 .5 .5
+				children USE nha
+			}
+		]
+
+		range [20 32]
+	}
+
+

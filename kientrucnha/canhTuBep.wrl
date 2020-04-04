@@ -1,0 +1,48 @@
+#VRML V2.0 utf8
+
+DEF	TuMo1 Transform {
+			translation	-.97 0 0
+			children [
+				Transform {
+					translation	0.47 0 0
+					children [
+						DEF c1 Transform {
+							children Shape {
+								appearance DEF mauBe Appearance{
+									material Material {
+										diffuseColor .91 .91 .902
+									}
+								}
+								geometry Box {size 1 0.6 0.03}
+							}
+						}
+				
+						#taycam
+						Transform {
+							translation	0 0 0.01
+							children DEF taycam Shape {
+								appearance Appearance {
+									texture	ImageTexture {
+										url	"image/bg_Go.jpg"
+									}
+								}
+								geometry Box {size 0.2 0.05 0.03}
+							}
+						}
+			
+					]
+				}
+
+				DEF	cylinderSensorTuMo1 CylinderSensor {
+					offset 0
+					enabled	TRUE
+					diskAngle 0.001
+					autoOffset TRUE
+					minAngle -1.57
+					maxAngle 0
+			 
+				}
+			]
+			ROUTE cylinderSensorTuMo1.rotation_changed TO TuMo1.rotation
+		
+	}

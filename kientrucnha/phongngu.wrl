@@ -1,0 +1,109 @@
+#VRML V2.0 utf8
+
+LOD	{
+	level [
+		DEF phong Group {
+			children [
+				#giuong+den ngu
+				Transform {
+					children [
+						#giuongngu
+						Transform {
+	
+							children DEF giuongNgu Inline {
+								url	"giuongngu.wrl"
+							}
+						}
+
+						#tu den
+						Transform {
+							translation	0 0.1 -.86
+							children [
+								Transform {
+									translation	-1.1 0 0
+									children [
+										DEF	keDenNgu1 Transform	{
+											children [
+											DEF keTuDen Inline	{
+												url	"KeDenNgu.wrl"
+											}
+
+											#den ngu
+											Transform {
+												scale 0.6 0.6 0.6
+												translation	0 0.68 0
+												children DEF denngu Inline {
+													url	"DenNgu.wrl"
+												}
+											}
+											]
+										}
+									]
+								}
+
+								#Transform {
+								#	translation	1.1 0 0
+								#	children USE keDenNgu1
+								#}
+							]
+						}
+	
+					]
+				}
+
+				#Tu quan ao
+				Transform {
+					translation	1.7 .85 -0.01
+					children Transform {
+						rotation 0 1 0 -1.57
+						children Inline	{
+							url	"TuQuanAo.wrl"
+						}
+					}
+				}
+
+				# Khung anhr
+				Transform {
+					translation	0 1.35 -1.045
+					children [
+						Transform {
+							translation	0.2 0 0
+							scale 0.9 0.9 0.9
+							children Inline	{
+								url	"khunganh.wrl"
+							}
+						}
+
+						Transform {
+							translation	-0.2 0 0 
+							scale 0.9 0.9 0.9
+							children Inline	{
+								url	"khunganh2.wrl"
+							}
+						}
+					]
+				}
+
+
+
+			]
+		}
+
+		DEF phog2 Transform {
+			scale .8 .8 .8
+			translation	0 -.1 0
+			children USE phong
+		}
+
+		Transform{
+			scale .8 .8 .8
+			translation	0 -.2 0
+			children USE phog2
+		}
+
+	]
+
+	range [
+		25 40
+	]
+}

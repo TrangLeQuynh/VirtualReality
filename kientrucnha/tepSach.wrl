@@ -1,0 +1,58 @@
+#VRML V2.0 utf8
+
+							  		Shape {
+			appearance Appearance {
+				material Material {
+					#diffuseColor 1 0 0
+					#emissiveColor 1 1 0
+					ambientIntensity 0.2
+				}
+
+				texture	ImageTexture {
+					url	"image\vaiRapBe.jpg"
+				}
+
+			}
+
+			geometry DEF sach Box {
+				size 0.05 0.25 0.18
+			}
+		}
+
+		Transform {
+			translation	-0.05 0 0
+			children Shape {
+				appearance Appearance {
+					material Material {
+						diffuseColor 1 1 0
+					}
+
+					texture	ImageTexture {
+						url	"image\vaiNhungDo.jpg"
+					}
+
+
+				}
+
+				geometry USE sach
+			}
+		}
+
+		Transform {
+			rotation 0 0 1 0.362
+			translation	0.1 0 0
+			children Shape {
+				appearance Appearance {
+					material Material {
+					#	diffuseColor 0 0 1
+					}
+
+					texture	ImageTexture {
+						url	"image\gach2.jpg"
+					}
+				}
+
+				geometry USE sach
+			}
+
+		}

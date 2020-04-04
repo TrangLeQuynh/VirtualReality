@@ -1,0 +1,62 @@
+#VRML V2.0 utf8
+
+LOD{
+	level [
+		#level 1
+		DEF b1 Group {
+			children [
+				#2x3.1x0.89
+
+				Transform {
+					translation	0 -.05 0
+					children DEF ban Inline{
+						url	"banPhongKhach.wrl"
+					}
+				}
+
+				#ghe dai
+				Transform {
+					translation	1.38 0 0
+					children DEF gheDai Inline {
+						url "gheDaiPhongKhach.wrl"	
+					}
+				}
+
+
+				Transform {
+					translation	-1.38 0 0
+					children [
+						Transform {
+							translation	0 0 .6
+							children DEF gheNgan Inline	{
+								url	"gheNganPhongKhach.wrl"
+							}
+						}
+
+						Transform {
+							translation	0 0 -.6
+							children USE gheNgan
+						}
+					]
+				}
+			]
+		}
+
+		#level 2
+		DEF	b2 Transform {
+			scale .8 .8 .8 
+			translation	0 -.1 0
+			children USE b1
+		}
+
+		#level 3
+		DEF	b3 Transform {
+			scale .8 .8 .8
+			translation	0 -.2 0
+			children USE b2
+		}
+
+  	]
+
+	range [25 40]
+}

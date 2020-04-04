@@ -1,0 +1,50 @@
+#VRML V2.0 utf8
+
+DEF	moCua Transform	{
+	translation	0.4 0 0
+	children [
+		DEF	cylinderSensor1 CylinderSensor {
+			minAngle -1.57
+			maxAngle 0
+		}
+		DEF cua Transform {
+			translation	-.4 0 0
+			#scale 1 1.2 1
+			children [
+				Inline {
+					url "cuaPhong.wrl"
+				}
+
+				Transform {
+					translation	-.336 0 0
+					children [
+						#chanbam cua
+							DEF p1 Shape {
+								appearance DEF mau Appearance {
+									material Material {
+										diffuseColor .48 .4 .33
+									}
+								}
+
+								geometry Box {
+									size 0.025 0.06 0.095
+								}
+							}
+
+						#taycam
+						DEF	tayCam Transform {
+							children [
+								Inline {
+									url	"tayMoCua.wrl"
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+
+	]
+}
+
+ROUTE cylinderSensor1.rotation_changed TO moCua.rotation

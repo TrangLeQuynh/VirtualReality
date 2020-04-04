@@ -1,0 +1,78 @@
+#VRML V2.0 utf8
+
+# Produced by 3D Studio MAX VRML97 exporter, Version 3, Revision 1.31
+# MAX File: ŽÀŒ±ƒ¿Color2.max, Date: Tue Nov 30 18:02:13 1999
+
+Background{
+  skyColor 0.8 1 1
+}
+DEF Omni01 PointLight {
+  intensity 1
+  color 0.706 0.706 0.706
+  location -819 0 -20.5
+  on TRUE
+  radius 4.1e+003
+}
+DEF Omni02 PointLight {
+  intensity 1
+  color 0.706 0.706 0.706
+  location -0.776 0 -796
+  on TRUE
+  radius 4.1e+003
+}
+DEF Omni03 PointLight {
+  intensity 1
+  color 0.706 0.706 0.706
+  location 816 0 -19.4
+  on TRUE
+  radius 4.1e+003
+}
+DEF Omni04 PointLight {
+  intensity 1
+  color 0.706 0.706 0.706
+  location -14.3 0 797
+  on TRUE
+  radius 4.1e+003
+}
+DEF Spot01 SpotLight {
+  intensity 1.5
+  color 0.706 0.706 0.706
+  location 35.3 2.39e+003 0.000104
+  direction -0.0203 -1 0
+  cutOffAngle 0.785
+  beamWidth 0.75
+  on TRUE
+  radius 4.1e+003
+}
+DEF Spot01-TIMER TimeSensor { loop TRUE cycleInterval 3.33 },
+DEF mochinokiCAMERA Viewpoint {
+  position 23.9 1.51 -114
+  orientation 0.119 -0.993 -0.000135 -0.00229
+  fieldOfView 0.899
+  description "mochinokiCAMERA"
+}
+DEF hisayaCAMERA Viewpoint {
+  position 28.2 1.51 432
+  orientation 0.119 -0.993 -0.000135 -0.00229
+  fieldOfView 0.899
+  description "hisayaCAMERA"
+}
+DEF HrokojiCamera Viewpoint {
+  position -217 6.69 4.83
+  orientation 0 1 0 -1.57
+  fieldOfView 0.899
+  description "HrokojiCamera"
+}
+DEF NishikiCamera Viewpoint {
+  position 209 3.51 -93.2
+  orientation 0 -1 0 -1.57
+  fieldOfView 0.899
+  description "NishikiCamera"
+}
+DEF TVCamera Viewpoint {
+  position 25.6 76.8 -359
+  orientation 0 -0.982 -0.187 -3.14
+  fieldOfView 0.899
+  description "TVCamera"
+}
+NavigationInfo { headlight FALSE }

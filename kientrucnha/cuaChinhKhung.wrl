@@ -1,0 +1,120 @@
+#VRML V2.0 utf8
+
+#khung tren
+Transform {
+	translation	0 0.97 0
+	children DEF k1 Shape {
+		appearance DEF chatLieu Appearance {
+			material Material {}
+			texture	ImageTexture {
+				url	"image/bg_Go2.jpg"
+			}
+		}
+
+		geometry Box {
+			size 2 0.06 0.1
+		}
+	}
+}
+
+Transform {
+	translation	0 0.83 0
+	children USE k1
+}
+
+#khung doc
+
+Transform {
+	translation	0.97 0 0
+	children DEF k2	Shape {
+		appearance USE chatLieu
+		geometry Box {size 0.06 2 0.1}
+	}
+}
+
+Transform {
+	translation	0.83 0 0
+	children USE k2
+}
+
+Transform {
+	translation	-.97 0 0
+	children USE k2
+}
+
+Transform {
+	translation	-.83 0 0
+	children USE k2
+}
+
+#chanduoi
+Transform {
+
+	translation	0.9 -.6 0
+	children DEF k3 Shape {
+		appearance USE chatLieu
+		geometry Box {size 0.08 0.8 0.08}
+	}
+}
+
+Transform {
+	translation	-.9 -.6 0
+	children USE k3
+}
+
+#chan
+
+Transform {
+	translation	0.9 .72 0
+	children DEF k4 Transform {
+		scale 1 0.2 1
+		children USE k3
+	}
+}
+
+Transform {
+	translation	-.9 .72 0
+	children USE k4
+}
+
+
+#kinh 2 ben
+
+Transform {
+	translation	0.9 0 0
+	children DEF kinh Shape	{
+		appearance Appearance {
+			material Material {
+				diffuseColor .129 .075 .098
+				transparency 0.8
+			}
+		}
+
+		geometry Box {
+			size 0.08 2 0.05
+		}
+	}
+}
+
+Transform {
+	translation	-.9 0 0
+	children USE kinh
+}
+
+
+Transform {
+	translation	0 0.9 0 
+	children Shape {
+		appearance Appearance {
+			 material Material {
+				diffuseColor .129 .075 .098
+				transparency 0.8
+			}
+		}
+
+		geometry Box {
+			size 1.76 0.08 0.045
+		}
+	}
+}
+

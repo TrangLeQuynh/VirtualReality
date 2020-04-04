@@ -1,0 +1,48 @@
+#VRML V2.0 utf8
+
+DEF khunganh Group {
+	
+	children [
+		Transform {
+			translation	0 0 0
+			children DEF VienKhungNgang Shape {
+				appearance Appearance {
+					material Material {}
+					texture	ImageTexture {
+						url "image\bg_Go2.jpg"
+					}
+				}
+
+				geometry Extrusion {
+					crossSection [
+						0.004 0.006,0.006 0.004,
+					    0.006 -0.004,0.004 -.006,
+						-.004 -.006,-.006 -.004,
+						-.006 .004, -.004 .006,
+						.004 .006
+					]
+
+					spine [-.2 -.35 0, -.2 .35 0, .2 .35 0, .2 -.35 0,-.2 -.35 0]
+				}
+			}
+		}
+
+		Transform {
+			translation	0 0 -.002
+			children DEF anh Shape {
+				appearance Appearance {
+					texture	ImageTexture {
+						url	"image/anhtranh1.jpg"
+					}
+				}
+
+				geometry Box {
+					size 0.4 0.7 0.0015
+				}
+			}
+		}
+
+	
+	]
+
+}

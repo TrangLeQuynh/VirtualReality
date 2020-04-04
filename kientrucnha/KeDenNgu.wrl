@@ -1,0 +1,175 @@
+#VRML V2.0 utf8
+
+DEF	keDenNgu Group	{
+	bboxCenter 0 0 0
+	children [
+		Transform {
+			#children DEF chanke Shape {
+			#	appearance Appearance {
+			#		material Material {}
+			#		texture	ImageTexture {
+			#			url "C:\Users\redfi\Desktop\BTL\Virtual Reality\ThucHien\image\bg_Go2.jpg"
+			#		}
+			#	}
+			 #
+			#	geometry Box {size 0.6 0.3 0.35}
+			#}
+
+			#dựng hộp tủ
+			children [
+				#hai cạnh
+				Transform {
+					translation	-0.29 0 0
+					children DEF kck1 Shape {
+						appearance DEF chatlieu Appearance {
+							texture	ImageTexture {
+								url "image\bg_Go2.jpg"	
+							}
+
+							material Material {
+								shininess 0.2
+								#specularColor 1 1 1
+								ambientIntensity 0.5
+							}
+						}
+
+						geometry Box {size 0.02 0.3 0.35}
+					}
+				}
+
+				Transform {
+					translation	0.29 0 0
+					children USE kck1
+				}
+				
+				Transform {
+					translation	0 0 -.1658
+					children DEF kck2 Shape	{
+						appearance USE chatlieu
+
+						geometry Box {size 0.6 0.3 0.01}
+					}
+				}
+
+				Transform {
+					translation	0 -.15 0
+					children DEF kck3 Shape	{
+						appearance USE chatlieu
+						geometry Box {size 0.6 0.02 0.35}
+					}
+				}
+
+				Transform {
+					translation	0 -0.21 0
+					children [
+						Transform {
+							translation	.275 0 0.15
+							children DEF chan Shape	{
+								appearance USE chatlieu
+								geometry Cylinder {
+									height 0.12
+									radius 0.015
+								}
+							}
+						}
+
+						Transform {
+							translation	-.275 0 -0.15
+							children USE chan
+						}
+
+						Transform {
+							translation	-.275 0 0.15
+							children USE chan
+						}
+
+						Transform {
+							translation	.275 0 -0.15
+							children USE chan
+						}
+					]
+				}
+
+				#cua tu
+				DEF CanhTuKe Transform {
+
+					#ve canh tu
+					translation	-.3 0 0.185
+					children [
+						DEF CanhTu Transform {
+							translation 0.3 0 0
+							children [
+
+								DEF	cuatu Shape	{
+									appearance Appearance {
+										material Material {
+											diffuseColor .91 .91 .902
+										}
+									}
+									geometry Box {size 0.6 .3 .02}
+								}
+
+								DEF  taycam Transform {
+									scale .7 .7 .7
+									translation	.16 0 0.06
+									children [
+										#tay cam
+										Transform {
+											translation	0 0 0
+											scale 1 1 0.4
+											children Shape {
+
+												appearance USE chatlieu
+
+												geometry Sphere	{
+													radius 0.05
+												}
+											}
+										}
+
+										Transform {
+											translation	0 0 -.04
+											children Shape {
+												appearance USE chatlieu
+												geometry Box {size 0.02 0.02 0.08}
+											}
+										}
+									]
+								}
+							]
+						}
+						DEF	cylinderSensorCUA CylinderSensor {
+							autoOffset TRUE
+							enabled	TRUE
+							maxAngle 0
+							minAngle -1.75
+							offset 0
+							diskAngle 0.001
+
+						}
+				]	
+				
+			}
+			]
+		}
+
+		Transform {
+			translation	0 0.175 0.01
+			children DEF matke Shape {
+				#appearance Appearance {
+				#	material Material {
+						#diffuseColor 1 1 1
+				#	}
+				#	texture	ImageTexture {
+				#		url "C:\Users\redfi\Desktop\BTL\Virtual Reality\ThucHien\image\bg_Go2.jpg"
+				#	}
+				#}
+				appearance USE chatlieu
+				geometry Box {size 0.6 0.05 0.37}			#them 0.02
+			}
+		}
+
+	]
+
+}
+ROUTE cylinderSensorCUA.rotation_changed  TO CanhTuKe.rotation

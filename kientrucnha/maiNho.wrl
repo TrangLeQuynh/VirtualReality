@@ -1,0 +1,149 @@
+#VRML V2.0 utf8
+
+Transform {
+	translation	0 .05 0
+	children Shape {
+		appearance DEF mauTuong Appearance {
+			material Material {}
+		}
+
+		geometry Box {
+			size 5.196152422 0.1 6.1
+		}
+	}
+}
+
+
+Transform {
+
+	children [
+		DEF ngoi1 Transform {
+			translation	0 -.02 0
+			children [
+				Transform {
+					translation	-2.75 0 0
+					children
+						Transform {
+							rotation 0 0 1 0.524
+							children Transform {
+								rotation 0 1 0 1.57
+								children DEF hinhThang Shape {
+									appearance USE mauTuong
+									geometry Extrusion {
+										crossSection [
+											#3.2 0, 1.2 3, -1.2 3, -3.2 0,3.2 0
+											3.2 3.2, 3.2 0, -3.2 0, -3.2 3.2, 1.2 3.2
+										#	3.2 0, 3.2 2,-3.2 2 , -3.2 0,3.2 0
+										]
+
+
+										spine [0 -0.05 0, 0 .05 0]
+									}
+								}
+							}
+						}
+				}
+
+				Transform {
+					translation	2.75 0 0
+					children
+						Transform {
+							rotation 0 0 1 -0.524
+							children Transform {
+								rotation 0 1 0 -1.57
+								children USE hinhThang
+							}
+						}
+
+
+				}
+			]
+		}
+
+		Transform {
+			translation	0 0.1 0
+			children DEF ngoi2 Transform {
+				children [
+					Transform {
+						translation	-2.75 0 0
+						children
+							Transform {
+								rotation 0 0 1 0.524
+								children Transform {
+									rotation 0 1 0 1.57
+									children DEF hinhThangDo Shape {
+										appearance DEF mauNgoi Appearance {
+											material Material {
+												diffuseColor 1 0 0
+											}
+										}
+										geometry Extrusion {
+											crossSection [
+												#3.2 0, 1.2 3, -1.2 3, -3.2 0,3.2 0
+												3.2 3.2, 3.2 0, -3.2 0, -3.2 3.2, 1.2 3.2
+											#	3.2 0, 3.2 2,-3.2 2 , -3.2 0,3.2 0
+											]
+
+
+											spine [0 -0.05 0, 0 .05 0]
+										}
+									}
+								}
+							}
+					}
+
+					Transform {
+						translation	2.75 0 0
+						children
+							Transform {
+								rotation 0 0 1 -0.524
+								children Transform {
+									rotation 0 1 0 -1.57
+									children USE hinhThangDo
+								}
+							}
+
+
+					}
+				]
+			}
+			
+		}
+	]
+}
+
+
+Transform {
+	translation	0 0 0
+	children [
+		Transform {
+			translation	0 0 -3.05
+			children DEF TamGiac Transform {
+				rotation 1 0 0 3.14
+				children Shape {
+					appearance USE mauTuong
+					geometry Extrusion {
+						crossSection [
+							0 1.5 ,2.598076211 0,-2.598076211 0,0 1.5
+						]
+
+						spine [
+							 0 0 -.05, 0 0 0.05
+						]
+					}
+				}
+			}
+
+		}
+
+		Transform {
+			translation	0 0 3.05 
+			children USE TamGiac
+		}
+	]
+}
+
+
+
+
+

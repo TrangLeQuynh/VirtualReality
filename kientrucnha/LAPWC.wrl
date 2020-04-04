@@ -1,0 +1,26 @@
+#VRML V2.0 utf8
+
+Transform {
+	translation	0 0 0
+	scale 0.1 0.1 0.1 
+	rotation 0 0 1 1.57
+	children [
+		DEF	A1 Transform {
+			children[
+				Transform {
+					rotation 0 0 1 1.57
+					translation	-1 0 0
+					children[
+						Inline {url "LAP.wrl"}
+					]
+				}
+			]
+		}
+		DEF	CD CylinderSensor {
+			maxAngle 1.57
+			minAngle 0
+		}
+	]
+}
+
+ROUTE CD.rotation_changed  TO A1.rotation
